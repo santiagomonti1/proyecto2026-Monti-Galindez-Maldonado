@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="authors" content="Santiago Monti, Luis Bautista Maldonado, Baltazar Galindez Quintana">
+    <meta name="description" content="Diario personal de peliculas">
+    <meta name="keywords" content="peliculas, cine, diario, resenas">
+    <title>Filmoteca | Inicio </title>
+    <link rel="icon" href="images/favicon.png">
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
+</head>
+<body>
+    <header class="encabezado">
+        <div class="contenedor">
+            <img src="images/favicon.png" alt="Logo Filmoteca" class="logo">
+            <h1>Filmoteca</h1>
+       
+
+    <nav>
+            <ul class="menu-lista">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="catalogo.html">Catalogo</a></li>
+                <li><a href="diario.html">Mi diario</a></li>
+                <li><a href="ficha.html">Ficha</a></li>
+            </ul>
+         </nav>
+    </div>
+</header>
+
+    <main>
+    <div class="contenedor">
+        <p class="subtitulo">Tu diario personal de peliculas</p>
+
+        <form class="buscador" action="catalogo.html" method="get">
+            <label for="buscar-inicio">Buscar pelicula</label>
+            <input type="text" id="buscar-inicio" name="titulo" placeholder="Ej: El ultimo vuelo" size="40" maxlength="50">
+            <button type="submit">Buscar</button>
+        </form>
+
+        <section>
+            <h2>Top peliculas de la semana</h2>
+            <div class="grilla-tarjetas">
+                <article class="tarjeta">
+                    <img src="imagenes/poster-el-ultimo-vuelo.jpg" alt="Poster Pelicula 1" class="poster">
+                    <div class="tarjeta-info">
+                        <h3><a href="ficha.html">El ultimo vuelo (2019)</a></h3>
+                        <p>Dir: L. Fontan</p>
+                        <p class="puntaje">Puntaje promedio: 4.3</p>
+                    </div>
+                </article>
+
+                <article class="tarjeta">
+                    <img src="imagenes/poster-sombras-de-octubre.jpg" alt="Poster Pelicula 2" class="poster">
+                    <div class="tarjeta-info">
+                        <h3><a href="ficha.html">Sombras de octubre (2021)</a></h3>
+                        <p>Dir: R. Aguilar</p>
+                        <p class="puntaje">Puntaje promedio: 4.6</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </div>
+</main>
+
+    <footer class="pie">
+        <div class="contenedor">
+            <p>Filmoteca 2026 - Tu diario de peliculas</p>
+        </div>
+    </footer>
+</body>
+</html>
