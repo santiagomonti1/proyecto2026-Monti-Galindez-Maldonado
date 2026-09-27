@@ -1,0 +1,175 @@
+/* ===== Variables===== */
+:root {
+    --color-fondo: #121212;
+    --color-superficie: #212121;
+    --color-borde: #373737;
+    --color-texto: #ebebeb;
+    --color-texto-suave: #9e9e9e;
+    --color-acento: #8c2b2b;
+    --color-acento-claro: #c76159;
+}
+
+/* ===== Base ===== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: var(--color-acento-claro);
+}
+
+a:hover {
+    color: var(--color-texto);
+}
+
+h1 {
+    margin: 0;
+    font-family: "Bebas Neue", Arial, sans-serif;
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+    color: var(--color-acento-claro);
+}
+
+h2 {
+    font-size: 1.4rem;
+    font-weight: normal;
+}
+
+.contenedor {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+main {
+    padding: 24px 0;
+}
+
+.subtitulo {
+    color: var(--color-texto-suave);
+}
+
+/* ===== Header y menú ===== */
+.encabezado {
+    border-bottom: 1px solid var(--color-borde);
+    padding: 12px 0;
+}
+
+.encabezado .contenedor {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo {
+    width: 36px;
+}
+
+.encabezado nav {
+    margin-left: auto;
+}
+
+.menu-lista {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-lista a {
+    color: var(--color-texto-suave);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.menu-lista a:hover,
+.menu-lista .activo {
+    color: var(--color-texto);
+}
+
+/* ===== Formularios ===== */
+input,
+select,
+textarea {
+    background-color: var(--color-superficie);
+    color: var(--color-texto);
+    border: 1px solid var(--color-borde);
+    border-radius: 6px;
+    padding: 10px 12px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--color-acento-claro);
+}
+
+.buscador {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin: 16px 0 24px;
+}
+
+.buscador label {
+    width: 100%;
+    color: var(--color-texto-suave);
+}
+
+.campo {
+    margin-bottom: 16px;
+}
+
+.campo label {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--color-texto-suave);
+}
+
+#resena {
+    width: 100%;
+}
+
+/* ===== Botones ===== */
+button {
+    background-color: var(--color-acento);
+    color: var(--color-texto);
+    border: none;
+    border-radius: 6px;
+    padding: 10px 24px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--color-acento-claro);
+}
+
+/* ===== Footer ===== */
+.pie {
+    border-top: 1px solid var(--color-borde);
+    margin-top: 40px;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--color-texto-suave);
+}
+
