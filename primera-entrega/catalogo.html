@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Santiago Monti, Luis Bautista Maldonado, Baltazar Galindez Quintana">
+    <meta name="description" content="Catálogo de películas de Filmoteca">
+    <meta name="keywords" content="películas, cine, catálogo, géneros">
+    <title>Filmoteca | Catálogo</title>
+    <link rel="icon" href="imagenes/favicon.png" type="image/png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <header class="encabezado">
+        <div class="contenedor">
+            <h1 class="logo">Filmoteca</h1>
+            <nav>
+                <ul class="menu">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="catalogo.html" class="activo">Catálogo</a></li>
+                    <li><a href="diario.html">Diario</a></li>
+                    <li><a href="ficha.html">Ficha</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="contenedor">
+            <h2>Catalogo</h2>
+
+            <div class="buscador">
+                <label for="buscar-catalogo">Buscar por titulo</label>
+                <input type="text" name="titulo" id="buscar-catalogo" placeholder="Ej: La red social" size="40" maxlength="50">
+                <button type="button" id="boton-buscar">Buscar</button>
+            </div>
+
+            <section class="lista-peliculas">
+                <article class="item-pelicula">
+                    <img src="imagenes/poster-fightclub.webp" alt="Póster de Fight Club" class="poster poster-chico">
+                    <div class="item-info">
+                        <h3><a href="ficha.html">Fight Club</a></h3>
+                        <p>Género: Drama</p>
+                        <p>Director: David Fincher</p>
+                    </div>
+                </article>
+
+                <article class="item-pelicula">
+                    <img src="imagenes/poster-michael.webp" alt="Póster de Michael" class="poster poster-chico">
+                    <div class="item-info">
+                        <h3><a href="ficha.html">Michael</a></h3>
+                        <p>Género: Drama Musical</p>
+                        <p>Director: Antoine Fuqua</p>
+                    </div>
+                </article>
+
+                <article class="item-pelicula">
+                    <img src="imagenes/poster-odisea.webp" alt="Póster de La Odisea" class="poster poster-chico">
+                    <div class="item-info">
+                        <h3><a href="ficha.html">La odisea</a></h3>
+                        <p>Género: Aventura</p>
+                        <p>Director: Christopher Nolan</p>
+                    </div>
+                </article>
+
+                <article class="item-pelicula">
+                    <img src="imagenes/poster-socialnetwork.webp" alt="Póster de La red social" class="poster poster-chico">
+                    <div class="item-info">
+                        <h3><a href="ficha.html">La red social</a></h3>
+                        <p>Género: Drama</p>
+                        <p>Director: David Fincher</p>
+                    </div>
+                </article>
+            </section>
+        </div>
+    </main>
+
+    <footer class="pie">
+        <div class="contenedor">
+            <p>Filmoteca 2026 · Tu diario de películas</p>
+        </div>
+    </footer>
+</body>
+</html>
