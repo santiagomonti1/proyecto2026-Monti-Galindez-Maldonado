@@ -172,4 +172,86 @@ button:hover {
     font-size: 0.9rem;
     color: var(--color-texto-suave);
 }
+/* ===== Pósters ===== */
+.poster {
+    width: 100%;
+    border-radius: 6px;
+}
 
+.poster-chico {
+    width: 60px;
+}
+
+.poster-grande {
+    width: 300px;
+}
+
+/* ===== Tarjetas (inicio y diario) ===== */
+.grilla-tarjetas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.tarjeta {
+    width: 180px;
+    background-color: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+}
+
+.tarjeta .poster {
+    border-radius: 8px 8px 0 0;
+}
+
+.tarjeta-info {
+    padding: 12px;
+}
+
+.tarjeta-info h3,
+.item-info h3 {
+    margin: 0 0 4px;
+    font-size: 1rem;
+}
+
+.tarjeta-info h3 a,
+.item-info h3 a {
+    color: var(--color-texto);
+    text-decoration: none;
+}
+
+.tarjeta-info h3 a:hover,
+.item-info h3 a:hover {
+    color: var(--color-acento-claro);
+}
+
+.tarjeta-info p,
+.item-info p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--color-texto-suave);
+}
+
+.tarjeta-info .puntaje,
+.ficha-info .puntaje {
+    color: var(--color-acento-claro);
+}
+
+/* ===== Catálogo ===== */
+.item-pelicula {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+/* ===== Ficha ===== */
+.ficha {
+    display: flex;
+    align-items: flex-start;
+    gap: 32px;
+}
+
+.ficha-info {
+    flex: 1;
+}
