@@ -1,0 +1,396 @@
+/* ===== Variables===== */
+:root {
+    --color-fondo: #121212;
+    --color-superficie: #212121;
+    --color-borde: #373737;
+    --color-texto: #ebebeb;
+    --color-texto-suave: #9e9e9e;
+    --color-acento: #8c2b2b;
+    --color-acento-claro: #c76159;
+}
+
+/* ===== Base ===== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: var(--color-acento-claro);
+}
+
+a:hover {
+    color: var(--color-texto);
+}
+
+h1 {
+    margin: 0;
+    font-family: "Bebas Neue", Arial, sans-serif;
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+    color: var(--color-acento-claro);
+}
+
+h2 {
+    font-size: 1.4rem;
+    font-weight: normal;
+}
+
+.contenedor {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+main {
+    padding: 24px 0;
+}
+
+.subtitulo {
+    color: var(--color-texto-suave);
+}
+
+/* ===== Header y menú ===== */
+.encabezado {
+    border-bottom: 1px solid var(--color-borde);
+    padding: 12px 0;
+}
+
+.encabezado .contenedor {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo {
+    width: 36px;
+}
+
+.encabezado nav {
+    margin-left: auto;
+}
+
+.menu-lista {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-lista a {
+    color: var(--color-texto-suave);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.menu-lista a:hover,
+.menu-lista .activo {
+    color: var(--color-texto);
+}
+
+/* ===== Formularios ===== */
+input,
+select,
+textarea {
+    background-color: var(--color-superficie);
+    color: var(--color-texto);
+    border: 1px solid var(--color-borde);
+    border-radius: 6px;
+    padding: 10px 12px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--color-acento-claro);
+}
+
+.buscador {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin: 16px 0 24px;
+}
+
+.buscador label {
+    width: 100%;
+    color: var(--color-texto-suave);
+}
+
+.campo {
+    margin-bottom: 16px;
+}
+
+.campo label {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--color-texto-suave);
+}
+
+#resena {
+    width: 100%;
+}
+
+/* ===== Botones ===== */
+button {
+    background-color: var(--color-acento);
+    color: var(--color-texto);
+    border: none;
+    border-radius: 6px;
+    padding: 10px 24px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--color-acento-claro);
+}
+
+/* ===== Footer ===== */
+.pie {
+    border-top: 1px solid var(--color-borde);
+    margin-top: 40px;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--color-texto-suave);
+}
+
+/* ===== Pósters ===== */
+.poster {
+    width: 100%;
+    border-radius: 6px;
+}
+
+.poster-chico {
+    width: 60px;
+}
+
+.poster-grande {
+    width: 300px;
+}
+
+/* ===== Tarjetas (inicio y diario) ===== */
+.grilla-tarjetas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.tarjeta {
+    width: 180px;
+    background-color: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+}
+
+.tarjeta .poster {
+    border-radius: 8px 8px 0 0;
+}
+
+.tarjeta-info {
+    padding: 12px;
+}
+
+.tarjeta-info h3,
+.item-info h3 {
+    margin: 0 0 4px;
+    font-size: 1rem;
+}
+
+.tarjeta-info h3 a,
+.item-info h3 a {
+    color: var(--color-texto);
+    text-decoration: none;
+}
+
+.tarjeta-info h3 a:hover,
+.item-info h3 a:hover {
+    color: var(--color-acento-claro);
+}
+
+.tarjeta-info p,
+.item-info p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--color-texto-suave);
+}
+
+.tarjeta-info .puntaje,
+.ficha-info .puntaje {
+    color: var(--color-acento-claro);
+}
+
+/* ===== Catálogo ===== */
+.item-pelicula {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+/* ===== Ficha ===== */
+.ficha {
+    display: flex;
+    align-items: flex-start;
+    gap: 32px;
+}
+
+.ficha-info {
+    flex: 1;
+}
+
+/* ===== Ficha: detalles ===== */
+.ficha-info h2 {
+    margin-top: 0;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.ficha-datos {
+    margin: 0;
+    color: var(--color-texto-suave);
+}
+
+.formulario {
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid var(--color-borde);
+}
+
+/* ===== Diario ===== */
+.perfil {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.avatar {
+    width: 56px;
+    height: 56px;
+    border: 1px solid var(--color-borde);
+    border-radius: 50%;
+    background-color: var(--color-superficie);
+    text-align: center;
+    line-height: 54px;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.perfil-info h2,
+.perfil-info p {
+    margin: 0;
+}
+
+.perfil-info p {
+    color: var(--color-texto-suave);
+}
+
+.tabla-historial {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabla-historial caption {
+    text-align: left;
+    margin-bottom: 8px;
+    color: var(--color-texto-suave);
+}
+
+.tabla-historial th,
+.tabla-historial td {
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--color-borde);
+}
+
+.tabla-historial th {
+    color: var(--color-texto-suave);
+}
+
+.tabla-historial tbody tr:hover {
+    background-color: var(--color-superficie);
+}
+
+/* ===== Login ===== */
+.encabezado-login {
+    padding-top: 40px;
+    text-align: center;
+}
+
+.encabezado-login h1 {
+    font-size: 3rem;
+}
+
+.caja-login {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 24px;
+    background-color: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+}
+
+.caja-login h2 {
+    margin-top: 0;
+}
+
+.caja-login input {
+    width: 100%;
+    background-color: var(--color-fondo);
+}
+
+#boton-ingresar {
+    width: 100%;
+    margin-bottom: 8px;
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 700px) {
+    .encabezado .contenedor {
+        flex-wrap: wrap;
+    }
+
+    .encabezado nav {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .menu-lista {
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    .buscador input {
+        width: 100%;
+    }
+
+    .tarjeta {
+        width: calc(50% - 10px);
+    }
+
+    .ficha {
+        flex-direction: column;
+    }
+
+    .poster-grande {
+        margin: 0 auto;
+    }
+}
