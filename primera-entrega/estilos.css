@@ -255,3 +255,108 @@ button:hover {
 .ficha-info {
     flex: 1;
 }
+
+/* ===== Ficha: detalles ===== */
+.ficha-info h2 {
+    margin-top: 0;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.ficha-datos {
+    margin: 0;
+    color: var(--color-texto-suave);
+}
+
+.formulario {
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid var(--color-borde);
+}
+
+/* ===== Diario ===== */
+.perfil {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.avatar {
+    width: 56px;
+    height: 56px;
+    border: 1px solid var(--color-borde);
+    border-radius: 50%;
+    background-color: var(--color-superficie);
+    text-align: center;
+    line-height: 54px;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.perfil-info h2,
+.perfil-info p {
+    margin: 0;
+}
+
+.perfil-info p {
+    color: var(--color-texto-suave);
+}
+
+.tabla-historial {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabla-historial caption {
+    text-align: left;
+    margin-bottom: 8px;
+    color: var(--color-texto-suave);
+}
+
+.tabla-historial th,
+.tabla-historial td {
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--color-borde);
+}
+
+.tabla-historial th {
+    color: var(--color-texto-suave);
+}
+
+.tabla-historial tbody tr:hover {
+    background-color: var(--color-superficie);
+}
+
+/* ===== Login ===== */
+.encabezado-login {
+    padding-top: 40px;
+    text-align: center;
+}
+
+.encabezado-login h1 {
+    font-size: 3rem;
+}
+
+.caja-login {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 24px;
+    background-color: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+}
+
+.caja-login h2 {
+    margin-top: 0;
+}
+
+.caja-login input {
+    width: 100%;
+    background-color: var(--color-fondo);
+}
+
+#boton-ingresar {
+    width: 100%;
+    margin-bottom: 8px;
+}
