@@ -172,6 +172,7 @@ button:hover {
     font-size: 0.9rem;
     color: var(--color-texto-suave);
 }
+
 /* ===== Pósters ===== */
 .poster {
     width: 100%;
@@ -359,4 +360,37 @@ button:hover {
 #boton-ingresar {
     width: 100%;
     margin-bottom: 8px;
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 700px) {
+    .encabezado .contenedor {
+        flex-wrap: wrap;
+    }
+
+    .encabezado nav {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .menu-lista {
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    .buscador input {
+        width: 100%;
+    }
+
+    .tarjeta {
+        width: calc(50% - 10px);
+    }
+
+    .ficha {
+        flex-direction: column;
+    }
+
+    .poster-grande {
+        margin: 0 auto;
+    }
 }
