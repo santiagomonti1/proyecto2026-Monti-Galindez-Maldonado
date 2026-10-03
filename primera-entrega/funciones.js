@@ -130,3 +130,56 @@ const iniciarSesion = () => {
 
     window.location.href = "index.html";
 };
+
+/**
+ * Muestra solo las películas del catálogo cuyo título contiene el texto buscado.
+ * Si ninguna coincide, muestra el mensaje de sin resultados.
+ * @method filtrarCatalogo
+ */
+const filtrarCatalogo = () => {
+    const texto = document.getElementById("buscar-catalogo").value.toLowerCase();
+    const peliculas = document.getElementsByClassName("item-pelicula");
+    let cantidadVisibles = 0;
+
+    for (let i = 0; i < peliculas.length; i++) {
+        const titulo = peliculas[i].getElementsByTagName("h3")[0].innerText.toLowerCase();
+
+        if (titulo.indexOf(texto) !== -1) {
+            peliculas[i].style.display = "";
+            cantidadVisibles++;
+        } else {
+            peliculas[i].style.display = "none";
+        }
+    }
+
+    if (cantidadVisibles === 0) {
+        document.getElementById("sin-resultados").style.display = "block";
+    } else {
+        document.getElementById("sin-resultados").style.display = "none";
+    }
+};
+
+/**
+ * Guarda el texto buscado en el inicio y lleva al catálogo para filtrar ahí.
+ * @method buscarDesdeInicio
+ */
+const buscarDesdeInicio = () => {
+    const texto = document.getElementById("buscar-inicio").value;
+    localStorage.setItem("busqueda", texto);
+    window.location.href = "catalogo.html";
+};
+
+/**
+ * Al cargar el catálogo, si hay una búsqueda guardada desde el inicio,
+ * la escribe en el buscador, filtra la lista y borra la búsqueda guardada.
+ * @method cargarBusqueda
+ */
+const cargarBusqueda = () => {
+    const busqueda = localStorage.getItem("busqueda");
+
+    if (busqueda !== null) {
+        document.getElementById("buscar-catalogo").value = busqueda;
+        localStorage.removeItem("busqueda");
+        filtrarCatalogo();
+    }
+};

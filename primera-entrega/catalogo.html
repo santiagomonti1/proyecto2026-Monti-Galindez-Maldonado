@@ -10,8 +10,9 @@
     <link rel="icon" href="imagenes/favicon.png" type="image/png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
     <link rel="stylesheet" href="estilos.css">
+    <script src="funciones.js"></script>
 </head>
-<body>
+<body onload="cargarBusqueda()">
     <header class="encabezado">
         <div class="contenedor">
             <img src="imagenes/favicon.png" alt="Logo Filmoteca" class="logo">
@@ -35,8 +36,8 @@
 
             <div class="buscador">
                 <label for="buscar-catalogo">Buscar por titulo</label>
-                <input type="text" name="titulo" id="buscar-catalogo" placeholder="Ej: La red social" size="40" maxlength="50">
-                <button type="button" id="boton-buscar">Buscar</button>
+                <input type="text" name="titulo" id="buscar-catalogo" placeholder="Ej: Michael" size="40" maxlength="50" oninput="filtrarCatalogo()">
+                <button type="button" id="boton-buscar" onclick="filtrarCatalogo()">Buscar</button>
             </div>
 
             <section class="lista-peliculas">
@@ -77,6 +78,11 @@
                 </article>
             </section>
         </div>
+        <div id="sin-resultados" class="sin-resultados">
+    <p class="sin-resultados-icono">!</p>
+    <p><strong>No encontramos resultados.</strong></p>
+    <p>Probá con otro título.</p>
+</div>
     </main>
 
     <footer class="pie">
