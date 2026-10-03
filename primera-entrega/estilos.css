@@ -365,3 +365,9 @@ button:hover {
     margin-top: 12px;
     color: var(--color-acento-claro);
 }
+
+.mensaje-error {
+    margin: 6px 0 0;
+    font-size: 0.9rem;
+    color: var(--color-acento-claro);
+}

@@ -63,3 +63,70 @@ const guardarResena = (promedio, votos, anioEstreno) => {
             `¡Reseña guardada! Nuevo puntaje promedio: ${nuevoPromedio.toFixed(2)} / 5 (${votos + 1} votos)`;
     }
 };
+
+// funciones para login
+
+/**
+ * Borra los mensajes de error del login y devuelve los bordes de los campos a su color original.
+ * @method limpiarErroresLogin
+ */
+const limpiarErroresLogin = () => {
+    document.getElementById("error-usuario").innerText = "";
+    document.getElementById("error-contrasena").innerText = "";
+    document.getElementById("usuario").style.borderColor = "";
+    document.getElementById("contrasena").style.borderColor = "";
+};
+
+/**
+ * Muestra un mensaje de error debajo de un campo, marca su borde en rojo y blanquea el campo.
+ * @method mostrarError
+ * @param {string} idCampo - Id del input que tiene el error
+ * @param {string} idMensaje - Id del párrafo donde se escribe el mensaje
+ * @param {string} texto - Mensaje de error para el usuario
+ */
+const mostrarError = (idCampo, idMensaje, texto) => {
+    document.getElementById(idMensaje).innerText = texto;
+    document.getElementById(idCampo).style.borderColor = "var(--color-acento-claro)";
+    document.getElementById(idCampo).value = "";
+};
+
+/**
+ * Comprueba el usuario y la contraseña ingresados. Si son correctos, lleva al inicio;
+ * si no, muestra el error correspondiente.
+ * @method iniciarSesion
+ */
+const iniciarSesion = () => {
+    const usuarios = [
+        { usuario: "santiago", contrasena: "santi2026" },
+        { usuario: "luis", contrasena: "luis2026" },
+        { usuario: "baltazar", contrasena: "balta2026" }
+    ];
+    const usuario = document.getElementById("usuario").value.toLowerCase();
+    const contrasena = document.getElementById("contrasena").value;
+
+    limpiarErroresLogin();
+
+    if (usuario === "") {
+        mostrarError("usuario", "error-usuario", "Ingresá tu usuario.");
+        return;
+    }
+
+    if (contrasena === "") {
+        mostrarError("contrasena", "error-contrasena", "Ingresá tu contraseña.");
+        return;
+    }
+
+    const usuarioEncontrado = usuarios.find(u => u.usuario === usuario);
+
+    if (usuarioEncontrado === undefined) {
+        mostrarError("usuario", "error-usuario", "Ese usuario no existe.");
+        return;
+    }
+
+    if (usuarioEncontrado.contrasena !== contrasena) {
+        mostrarError("contrasena", "error-contrasena", "Contraseña incorrecta. Intentá de nuevo.");
+        return;
+    }
+
+    window.location.href = "index.html";
+};

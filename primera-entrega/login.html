@@ -10,6 +10,7 @@
     <link rel="icon" href="imagenes/favicon.png" type="image/png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
     <link rel="stylesheet" href="estilos.css">
+    <script src="funciones.js"></script>
 </head>
 <body>
     <header class="encabezado-login">
@@ -25,17 +26,19 @@
                 <h2>Iniciar sesión</h2>
 
                 <div class="formulario">
-                    <div class="campo">
-                        <label for="usuario">Usuario</label>
-                        <input type="text" id="usuario" name="usuario" placeholder="Ej: santiago" size="30" maxlength="20">
-                    </div>
+                <div class="campo">
+                    <label for="usuario">Usuario</label>
+                    <input type="text" id="usuario" name="usuario" placeholder="Ej: santiago" size="30" maxlength="20">
+                    <p id="error-usuario" class="mensaje-error"></p>
+            </div>
 
-                    <div class="campo">
-                        <label for="contrasena">Contraseña</label>
-                        <input type="password" id="contrasena" name="contrasena" size="30" maxlength="20">
-                    </div>
+                <div class="campo">
+                    <label for="contrasena">Contraseña</label>
+                    <input type="password" id="contrasena" name="contrasena" size="30" maxlength="20">
+                    <p id="error-contrasena" class="mensaje-error"></p>
+                </div>
 
-                    <button type="button" id="boton-ingresar">Ingresar</button>
+                    <button type="button" id="boton-ingresar" onclick="iniciarSesion()">Ingresar</button>
                 </div>
 
                 <p><a href="index.html">Volver al inicio</a></p>
