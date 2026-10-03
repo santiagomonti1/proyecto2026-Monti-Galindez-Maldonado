@@ -10,6 +10,7 @@
     <link rel="icon" href="imagenes/favicon.png">
     <link rel="stylesheet" href="estilos.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
+    <script src="funciones.js"></script>
 </head>
 <body>
     <header class="encabezado">
@@ -67,7 +68,8 @@
                         <textarea id="resena" name="resena" rows="5" cols="50" maxlength="500" placeholder="Escribí tu reseña..."></textarea>
                     </div>
 
-                    <button type="button" id="boton-guardar">Guardar</button>
+                    <button type="button" id="boton-guardar" onclick="guardarResena(4.3, 128, 2026)">Guardar</button>
+                    <p id="resultado" class="resultado"></p>
                 </div>
             </div>
         </article>

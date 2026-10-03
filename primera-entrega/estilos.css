@@ -60,6 +60,7 @@ main {
 
 .subtitulo {
     color: var(--color-texto-suave);
+    font-size: 2.5rem;
 }
 
 /* ===== Header y menú ===== */
@@ -362,35 +363,32 @@ button:hover {
     margin-bottom: 8px;
 }
 
-/* ===== Mobile ===== */
-@media (max-width: 700px) {
-    .encabezado .contenedor {
-        flex-wrap: wrap;
-    }
+.resultado {
+    margin-top: 12px;
+    color: var(--color-acento-claro);
+}
 
-    .encabezado nav {
-        margin-left: 0;
-        width: 100%;
-    }
+.mensaje-error {
+    margin: 6px 0 0;
+    font-size: 0.9rem;
+    color: var(--color-acento-claro);
+}
 
-    .menu-lista {
-        flex-wrap: wrap;
-        gap: 16px;
-    }
+.sin-resultados {
+    display: none;
+    max-width: 400px;
+    padding: 24px;
+    text-align: center;
+    background-color: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+}
 
-    .buscador input {
-        width: 100%;
-    }
+.sin-resultados p {
+    margin: 4px 0;
+}
 
-    .tarjeta {
-        width: calc(50% - 10px);
-    }
-
-    .ficha {
-        flex-direction: column;
-    }
-
-    .poster-grande {
-        margin: 0 auto;
-    }
+.sin-resultados-icono {
+    font-size: 2rem;
+    color: var(--color-acento-claro);
 }
