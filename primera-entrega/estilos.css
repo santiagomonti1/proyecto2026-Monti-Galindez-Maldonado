@@ -360,3 +360,8 @@ button:hover {
     width: 100%;
     margin-bottom: 8px;
 }
+
+.resultado {
+    margin-top: 12px;
+    color: var(--color-acento-claro);
+}
