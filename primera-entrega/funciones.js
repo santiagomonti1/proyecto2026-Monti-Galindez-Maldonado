@@ -1,3 +1,75 @@
+const peliculas = [
+    {
+        titulo: "El club de la pelea",
+        anio: 1999,
+        director: "David Fincher",
+        genero: "Drama",
+        sinopsis: "Un oficinista insomne y desencantado conoce a Tyler Durden, un carismático vendedor de jabón, y juntos fundan un club de peleas clandestino que termina saliéndose de control.",
+        imagen: "poster-fightclub.webp",
+        promedio: 4.7,
+        votos: 210
+    },
+    {
+        titulo: "Michael",
+        anio: 2026,
+        director: "Antoine Fuqua",
+        genero: "Drama Musical",
+        sinopsis: "Película biográfica sobre Michael Jackson, que recorre su vida y su carrera desde sus comienzos con los Jackson 5 hasta convertirse en el Rey del Pop.",
+        imagen: "poster-michael.webp",
+        promedio: 3.8,
+        votos: 75
+    },
+    {
+        titulo: "La odisea",
+        anio: 2026,
+        director: "Christopher Nolan",
+        genero: "Aventura",
+        sinopsis: "Odiseo, el legendario rey de Ítaca, emprende un largo y peligroso viaje de regreso a casa tras la Guerra de Troya. A lo largo de su travesía, se ve obligado a enfrentarse a los caprichos de los dioses, a monstruos mitológicos y a pruebas que llevan su astucia y su humanidad al límite.",
+        imagen: "poster-odisea.webp",
+        promedio: 4.3,
+        votos: 128
+    },
+    {
+        titulo: "La red social",
+        anio: 2010,
+        director: "David Fincher",
+        genero: "Drama",
+        sinopsis: "La historia de cómo Mark Zuckerberg creó Facebook siendo estudiante de Harvard, y de las demandas que enfrentó por parte de sus antiguos socios.",
+        imagen: "poster-socialnetwork.webp",
+        promedio: 4.6,
+        votos: 190
+    },
+    {
+        titulo: "El señor de los anillos: La comunidad del anillo",
+        anio: 2001,
+        director: "Peter Jackson",
+        genero: "Aventura",
+        sinopsis: "El hobbit Frodo Bolsón recibe un anillo de enorme poder y emprende, junto a ocho compañeros, un peligroso viaje para destruirlo en el Monte del Destino.",
+        imagen: "poster-lotr.webp",
+        promedio: 4.9,
+        votos: 340
+    },
+    {
+        titulo: "Spider-Man: Un nuevo día",
+        anio: 2026,
+        director: "Destin Cretton",
+        genero: "Ciencia Ficción",
+        sinopsis: "Tras los hechos de Sin camino a casa, Peter Parker intenta seguir adelante como Spider-Man en un mundo donde nadie recuerda quién es.",
+        imagen: "poster-spiderman.webp",
+        promedio: 4.1,
+        votos: 95
+    },
+    {
+        titulo: "Whiplash",
+        anio: 2014,
+        director: "Damien Chazelle",
+        genero: "Drama Musical",
+        sinopsis: "Un joven baterista ingresa a un prestigioso conservatorio de música, donde un instructor implacable lo lleva al límite en su búsqueda de la perfección.",
+        imagen: "poster-whiplash.webp",
+        promedio: 3.9,
+        votos: 160
+    }
+];
 /**
  * Comprueba que los campos de la reseña sean correctos. Si alguno no lo es,
  * avisa al usuario con un alert y blanquea ese campo.
@@ -182,4 +254,33 @@ const cargarBusqueda = () => {
         localStorage.removeItem("busqueda");
         filtrarCatalogo();
     }
+};
+/**
+ * Genera el listado del catálogo a partir del array de películas.
+ * @method cargarCatalogo
+ */
+const cargarCatalogo = () => {
+    let contenido = "";
+
+    peliculas.forEach((pelicula, id) => {
+        contenido += `<article class="item-pelicula">
+            <img src="imagenes/${pelicula.imagen}" alt="Póster de ${pelicula.titulo}" class="poster poster-chico">
+            <div class="item-info">
+                <h3><a href="ficha.html" onclick="seleccionarPelicula(${id})">${pelicula.titulo} (${pelicula.anio})</a></h3>
+                <p>Género: ${pelicula.genero}</p>
+                <p>Director: ${pelicula.director}</p>
+            </div>
+        </article>`;
+    });
+
+    document.getElementById("lista-peliculas").innerHTML = contenido;
+};
+
+/**
+ * Guarda en localStorage qué película eligió el usuario, para mostrarla en la ficha.
+ * @method seleccionarPelicula
+ * @param {number} id - Posición de la película en el array peliculas
+ */
+const seleccionarPelicula = (id) => {
+    localStorage.setItem("peliculaElegida", id);
 };
