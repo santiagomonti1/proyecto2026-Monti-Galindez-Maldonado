@@ -17,34 +17,34 @@
         <div class="contenedor">
             <img src="imagenes/favicon.png" alt="Logo Filmoteca" class="logo">
             <h1>Filmoteca</h1>
-    
 
-    <nav>
-            <ul class="menu-lista">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="catalogo.html" class="activo">Catalogo</a></li>
-                <li><a href="diario.html">Mi diario</a></li>
-                <li><a href="ficha.html">Ficha</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
+            <nav>
+                <ul class="menu-lista">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="catalogo.html" class="activo">Catálogo</a></li>
+                    <li><a href="diario.html">Mi diario</a></li>
+                    <li><a href="ficha.html">Ficha</a></li>
+                    <li><a href="login.html">Cerrar sesión</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
     <main>
         <div class="contenedor">
-            <h2>Catalogo</h2>
+            <h2>Catálogo</h2>
 
             <div class="buscador">
-                <label for="buscar-catalogo">Buscar por titulo</label>
+                <label for="buscar-catalogo">Buscar por título</label>
                 <input type="text" name="titulo" id="buscar-catalogo" placeholder="Ej: Michael" size="40" maxlength="50" oninput="filtrarCatalogo()">
                 <button type="button" id="boton-buscar" onclick="filtrarCatalogo()">Buscar</button>
             </div>
 
             <section class="lista-peliculas">
                 <article class="item-pelicula">
-                    <img src="imagenes/poster-fightclub.webp" alt="Póster de Fight Club" class="poster poster-chico">
+                    <img src="imagenes/poster-fightclub.webp" alt="Póster de El club de la pelea" class="poster poster-chico">
                     <div class="item-info">
-                        <h3><a href="ficha.html">Fight Club (1999)</a></h3>
+                        <h3>El club de la pelea (1999)</h3>
                         <p>Género: Drama</p>
                         <p>Director: David Fincher</p>
                     </div>
@@ -53,14 +53,14 @@
                 <article class="item-pelicula">
                     <img src="imagenes/poster-michael.webp" alt="Póster de Michael" class="poster poster-chico">
                     <div class="item-info">
-                        <h3><a href="ficha.html">Michael (2026)</a></h3>
+                        <h3>Michael (2026)</h3>
                         <p>Género: Drama Musical</p>
                         <p>Director: Antoine Fuqua</p>
                     </div>
                 </article>
 
                 <article class="item-pelicula">
-                    <img src="imagenes/poster-odisea.webp" alt="Póster de La Odisea" class="poster poster-chico">
+                    <img src="imagenes/poster-odisea.webp" alt="Póster de La odisea" class="poster poster-chico">
                     <div class="item-info">
                         <h3><a href="ficha.html">La odisea (2026)</a></h3>
                         <p>Género: Aventura</p>
@@ -71,45 +71,46 @@
                 <article class="item-pelicula">
                     <img src="imagenes/poster-socialnetwork.webp" alt="Póster de La red social" class="poster poster-chico">
                     <div class="item-info">
-                        <h3><a href="ficha.html">La red social (2010)</a></h3>
+                        <h3>La red social (2010)</h3>
                         <p>Género: Drama</p>
                         <p>Director: David Fincher</p>
                     </div>
                 </article>
 
                 <article class="item-pelicula">
-                    <img src="imagenes/poster-lotr.webp" alt="Póster de LOTR" class="poster poster-chico">
+                    <img src="imagenes/poster-lotr.webp" alt="Póster de El señor de los anillos" class="poster poster-chico">
                     <div class="item-info">
-                        <h3><a href="ficha.html">El señor de los anillos: La comunidad del anillo (2001)</a></h3>
+                        <h3>El señor de los anillos: La comunidad del anillo (2001)</h3>
                         <p>Género: Aventura</p>
                         <p>Director: Peter Jackson</p>
                     </div>
                 </article>
 
                 <article class="item-pelicula">
-                    <img src="imagenes/poster-spiderman.webp" alt="Póster de Spiderman" class="poster poster-chico">
+                    <img src="imagenes/poster-spiderman.webp" alt="Póster de Spider-Man" class="poster poster-chico">
                     <div class="item-info">
-                        <h3><a href="ficha.html">Spiderman: Un nuevo día (2026)</a></h3>
+                        <h3>Spider-Man: Un nuevo día (2026)</h3>
                         <p>Género: Ciencia Ficción</p>
                         <p>Director: Destin Cretton</p>
                     </div>
                 </article>
 
                 <article class="item-pelicula">
-                    <img src="imagenes/poster-whiplash.webp" alt="Póster de Whiplas" class="poster poster-chico">
+                    <img src="imagenes/poster-whiplash.webp" alt="Póster de Whiplash" class="poster poster-chico">
                     <div class="item-info">
-                        <h3><a href="ficha.html">Whiplash (2014)</a></h3>
+                        <h3>Whiplash (2014)</h3>
                         <p>Género: Drama Musical</p>
                         <p>Director: Damien Chazelle</p>
                     </div>
                 </article>
             </section>
+
+            <div id="sin-resultados" class="sin-resultados">
+                <p class="sin-resultados-icono">!</p>
+                <p><strong>No encontramos resultados.</strong></p>
+                <p>Probá con otro título.</p>
+            </div>
         </div>
-        <div id="sin-resultados" class="sin-resultados">
-    <p class="sin-resultados-icono">!</p>
-    <p><strong>No encontramos resultados.</strong></p>
-    <p>Probá con otro título.</p>
-</div>
     </main>
 
     <footer class="pie">
