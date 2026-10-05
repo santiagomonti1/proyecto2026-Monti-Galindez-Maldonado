@@ -120,19 +120,19 @@ const calcularNuevoPromedio = (promedio, votos, puntaje) => {
 };
 
 /**
- * Valida la reseña y, si es correcta, calcula y muestra el nuevo puntaje promedio.
+ * Valida la reseña y, si es correcta, calcula y muestra el nuevo puntaje promedio
+ * de la película elegida.
  * @method guardarResena
- * @param {number} promedio - Puntaje promedio actual de la película
- * @param {number} votos - Cantidad de votos actuales
- * @param {number} anioEstreno - Año de estreno de la película
  */
-const guardarResena = (promedio, votos, anioEstreno) => {
-    if (validarResena(anioEstreno)) {
+const guardarResena = () => {
+    const pelicula = peliculas[obtenerIdElegido()];
+
+    if (validarResena(pelicula.anio)) {
         const puntaje = Number(document.getElementById("puntaje").value);
-        const nuevoPromedio = calcularNuevoPromedio(promedio, votos, puntaje);
+        const nuevoPromedio = calcularNuevoPromedio(pelicula.promedio, pelicula.votos, puntaje);
 
         document.getElementById("resultado").innerText =
-            `¡Reseña guardada! Nuevo puntaje promedio: ${nuevoPromedio.toFixed(2)} / 5 (${votos + 1} votos)`;
+            `¡Reseña guardada! Nuevo puntaje promedio: ${nuevoPromedio.toFixed(2)} / 5 (${pelicula.votos + 1} votos)`;
     }
 };
 
@@ -283,4 +283,35 @@ const cargarCatalogo = () => {
  */
 const seleccionarPelicula = (id) => {
     localStorage.setItem("peliculaElegida", id);
+};
+/**
+ * Devuelve la posición de la película elegida en el catálogo.
+ * Si el usuario todavía no eligió ninguna, devuelve la de La odisea.
+ * @method obtenerIdElegido
+ * @return {number} Posición de la película en el array peliculas
+ */
+const obtenerIdElegido = () => {
+    const id = localStorage.getItem("peliculaElegida");
+
+    if (id === null) {
+        return 2;
+    }
+
+    return Number(id);
+};
+
+/**
+ * Completa la ficha con los datos de la película elegida.
+ * @method cargarFicha
+ */
+const cargarFicha = () => {
+    const pelicula = peliculas[obtenerIdElegido()];
+
+    document.getElementById("ficha-poster").src = `imagenes/${pelicula.imagen}`;
+    document.getElementById("ficha-poster").alt = `Póster de la película ${pelicula.titulo}`;
+    document.getElementById("ficha-titulo").innerText = pelicula.titulo;
+    document.getElementById("ficha-datos").innerText = `${pelicula.anio} · Dir: ${pelicula.director} · ${pelicula.genero}`;
+    document.getElementById("ficha-puntaje").innerText = `${pelicula.promedio} / 5 · Puntaje promedio (${pelicula.votos} votos)`;
+    document.getElementById("ficha-sinopsis").innerText = pelicula.sinopsis;
+    document.title = `Filmoteca | ${pelicula.titulo}`;
 };
