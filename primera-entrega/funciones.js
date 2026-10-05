@@ -2,8 +2,8 @@
  * Comprueba que los campos de la reseña sean correctos. Si alguno no lo es,
  * avisa al usuario con un alert y blanquea ese campo.
  * @method validarResena
- * @param {number} anioEstreno 
- * @return {boolean} 
+ * @param {number} anioEstreno - Año de estreno de la película
+ * @return {boolean} true si todos los campos son correctos, false si hay algún error
  */
 const validarResena = (anioEstreno) => {
     const puntaje = document.getElementById("puntaje").value;
@@ -38,10 +38,10 @@ const validarResena = (anioEstreno) => {
 /**
  * Calcula el nuevo puntaje promedio de la película al sumar el voto del usuario.
  * @method calcularNuevoPromedio
- * @param {number} promedio
- * @param {number} votos 
- * @param {number} puntaje 
- * @return {number} 
+ * @param {number} promedio - Puntaje promedio actual de la película
+ * @param {number} votos - Cantidad de votos actuales
+ * @param {number} puntaje - Puntaje que eligió el usuario (1 a 5)
+ * @return {number} Nuevo puntaje promedio
  */
 const calcularNuevoPromedio = (promedio, votos, puntaje) => {
     return (promedio * votos + puntaje) / (votos + 1);
@@ -50,9 +50,9 @@ const calcularNuevoPromedio = (promedio, votos, puntaje) => {
 /**
  * Valida la reseña y, si es correcta, calcula y muestra el nuevo puntaje promedio.
  * @method guardarResena
- * @param {number} promedio 
- * @param {number} votos 
- * @param {number} anioEstreno 
+ * @param {number} promedio - Puntaje promedio actual de la película
+ * @param {number} votos - Cantidad de votos actuales
+ * @param {number} anioEstreno - Año de estreno de la película
  */
 const guardarResena = (promedio, votos, anioEstreno) => {
     if (validarResena(anioEstreno)) {
