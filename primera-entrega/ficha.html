@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
     <script src="funciones.js"></script>
 </head>
-<body>
+<body onload="cargarFicha()">
     <header class="encabezado">
         <div class="contenedor">
             <img src="imagenes/favicon.png" alt="Logo Filmoteca" class="logo">
@@ -33,15 +33,15 @@
     <main>
         <div class="contenedor">
             <article class="ficha">
-                <img src="imagenes/poster-odisea.webp" alt="Póster de la película La odisea" class="poster poster-grande">
+                <img src="imagenes/poster-odisea.webp" alt="Póster de la película La odisea" class="poster poster-grande" id="ficha-poster">
 
                 <div class="ficha-info">
-                    <h2>La odisea</h2>
-                    <p class="ficha-datos">2026 · Dir: Christopher Nolan</p>
-                    <p class="puntaje">4.3 / 5 · Puntaje promedio (128 votos)</p>
+                    <h2 id="ficha-titulo">La odisea</h2>
+                    <p class="ficha-datos" id="ficha-datos">2026 · Dir: Christopher Nolan</p>
+                    <p class="puntaje" id="ficha-puntaje">4.3 / 5 · Puntaje promedio (128 votos)</p>
 
                     <h3>Sinopsis</h3>
-                    <p>Odiseo, el legendario rey de Ítaca, emprende un largo y peligroso viaje de regreso a casa tras la Guerra de Troya. A lo largo de su travesía, se ve obligado a enfrentarse a los caprichos de los dioses, a monstruos mitológicos y a pruebas que llevan su astucia y su humanidad al límite.</p>
+                    <p id="ficha-sinopsis">Odiseo, el legendario rey de Ítaca, emprende un largo y peligroso viaje de regreso a casa tras la Guerra de Troya. A lo largo de su travesía, se ve obligado a enfrentarse a los caprichos de los dioses, a monstruos mitológicos y a pruebas que llevan su astucia y su humanidad al límite.</p>
 
                     <div class="formulario">
                         <h3>Tu reseña</h3>
@@ -68,7 +68,7 @@
                             <textarea id="resena" name="resena" rows="5" cols="50" maxlength="500" placeholder="Escribí tu reseña..."></textarea>
                         </div>
 
-                        <button type="button" id="boton-guardar" onclick="guardarResena(4.3, 128, 2026)">Guardar</button>
+                        <button type="button" id="boton-guardar" onclick="guardarResena()">Guardar</button>
                         <p id="resultado" class="resultado"></p>
                     </div>
                 </div>
