@@ -17,67 +17,66 @@
         <div class="contenedor">
             <img src="imagenes/favicon.png" alt="Logo Filmoteca" class="logo">
             <h1>Filmoteca</h1>
-    
 
-    <nav>
-            <ul class="menu-lista">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="catalogo.html">Catálogo</a></li>
-                <li><a href="diario.html">Mi diario</a></li>
-                <li><a href="ficha.html" class="activo">Ficha</a></li>
-                <li><a href="login.html">Cerrar sesión</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
+            <nav>
+                <ul class="menu-lista">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="catalogo.html">Catálogo</a></li>
+                    <li><a href="diario.html">Mi diario</a></li>
+                    <li><a href="ficha.html" class="activo">Ficha</a></li>
+                    <li><a href="login.html">Cerrar sesión</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-<main>
-    <div class="contenedor">
-        <article class="ficha">
-            <img src="imagenes/poster-odisea.webp" alt="Póster de la película La odisea" class="poster poster-grande">
+    <main>
+        <div class="contenedor">
+            <article class="ficha">
+                <img src="imagenes/poster-odisea.webp" alt="Póster de la película La odisea" class="poster poster-grande">
 
-            <div class="ficha-info">
-                <h2>La odisea</h2>
-                <p class="ficha-datos">2026 · Dir: Christopher Nolan</p>
-                <p class="puntaje">4.3 / 5 · Puntaje promedio (128 votos)</p>
+                <div class="ficha-info">
+                    <h2>La odisea</h2>
+                    <p class="ficha-datos">2026 · Dir: Christopher Nolan</p>
+                    <p class="puntaje">4.3 / 5 · Puntaje promedio (128 votos)</p>
 
-                <h3>Sinopsis</h3>
-                <p>Odiseo, el legendario rey de Ítaca, emprende un largo y peligroso viaje de regreso a casa tras la Guerra de Troya. A lo largo de su travesía, se ve obligado a enfrentarse a los caprichos de los dioses, a monstruos mitológicos y a pruebas que llevan su astucia y su humanidad al límite.</p>
+                    <h3>Sinopsis</h3>
+                    <p>Odiseo, el legendario rey de Ítaca, emprende un largo y peligroso viaje de regreso a casa tras la Guerra de Troya. A lo largo de su travesía, se ve obligado a enfrentarse a los caprichos de los dioses, a monstruos mitológicos y a pruebas que llevan su astucia y su humanidad al límite.</p>
 
-                <div class="formulario">
-                    <h3>Tu reseña</h3>
+                    <div class="formulario">
+                        <h3>Tu reseña</h3>
 
-                    <div class="campo">
-                        <label for="puntaje">Tu puntaje</label>
-                        <select id="puntaje" name="puntaje">
-                            <option value="" disabled selected>Elegí un puntaje</option>
-                            <option value="1">1 - Mala</option>
-                            <option value="2">2 - Regular</option>
-                            <option value="3">3 - Buena</option>
-                            <option value="4">4 - Muy buena</option>
-                            <option value="5">5 - Excelente</option>
-                        </select>
+                        <div class="campo">
+                            <label for="puntaje">Tu puntaje</label>
+                            <select id="puntaje" name="puntaje">
+                                <option value="" disabled selected>Elegí un puntaje</option>
+                                <option value="1">1 - Mala</option>
+                                <option value="2">2 - Regular</option>
+                                <option value="3">3 - Buena</option>
+                                <option value="4">4 - Muy buena</option>
+                                <option value="5">5 - Excelente</option>
+                            </select>
+                        </div>
+
+                        <div class="campo">
+                            <label for="fecha-vista">¿Cuándo la viste?</label>
+                            <input type="date" id="fecha-vista" name="fecha-vista">
+                        </div>
+
+                        <div class="campo">
+                            <label for="resena">Reseña</label>
+                            <textarea id="resena" name="resena" rows="5" cols="50" maxlength="500" placeholder="Escribí tu reseña..."></textarea>
+                        </div>
+
+                        <button type="button" id="boton-guardar" onclick="guardarResena(4.3, 128, 2026)">Guardar</button>
+                        <p id="resultado" class="resultado"></p>
                     </div>
-
-                    <div class="campo">
-                        <label for="fecha-vista">¿Cuándo la viste?</label>
-                        <input type="date" id="fecha-vista" name="fecha-vista">
-                    </div>
-
-                    <div class="campo">
-                        <label for="resena">Reseña</label>
-                        <textarea id="resena" name="resena" rows="5" cols="50" maxlength="500" placeholder="Escribí tu reseña..."></textarea>
-                    </div>
-
-                    <button type="button" id="boton-guardar" onclick="guardarResena(4.3, 128, 2026)">Guardar</button>
-                    <p id="resultado" class="resultado"></p>
                 </div>
-            </div>
-        </article>
-    </div>
-</main>
+            </article>
+        </div>
+    </main>
 
-<footer class="pie">
+    <footer class="pie">
         <div class="contenedor">
             <p>Filmoteca 2026 · Tu diario de películas</p>
         </div>
