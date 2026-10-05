@@ -315,3 +315,29 @@ const cargarFicha = () => {
     document.getElementById("ficha-sinopsis").innerText = pelicula.sinopsis;
     document.title = `Filmoteca | ${pelicula.titulo}`;
 };
+
+/**
+ * Genera el top del inicio con las 5 películas de mayor puntaje promedio.
+ * @method cargarTop
+ */
+const cargarTop = () => {
+    const copia = peliculas.slice(0);
+    copia.sort((a, b) => b.promedio - a.promedio);
+    const top = copia.slice(0, 5);
+    let contenido = "";
+
+    top.forEach((pelicula) => {
+        const id = peliculas.indexOf(pelicula);
+
+        contenido += `<article class="tarjeta">
+            <img src="imagenes/${pelicula.imagen}" alt="Póster de ${pelicula.titulo}" class="poster">
+            <div class="tarjeta-info">
+                <h3><a href="ficha.html" onclick="seleccionarPelicula(${id})">${pelicula.titulo} (${pelicula.anio})</a></h3>
+                <p>Dir: ${pelicula.director}</p>
+                <p class="puntaje">Puntaje promedio: ${pelicula.promedio}</p>
+            </div>
+        </article>`;
+    });
+
+    document.getElementById("top-peliculas").innerHTML = contenido;
+};
