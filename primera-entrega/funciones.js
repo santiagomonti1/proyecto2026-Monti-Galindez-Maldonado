@@ -99,7 +99,7 @@ const validarResena = (anioEstreno) => {
         return false;
     }
 
-    if (resena.length < 10) {
+    if (resena.replaceAll(" ", "").length < 10) {
         alert("La reseña debe tener al menos 10 caracteres.");
         document.getElementById("resena").value = "";
         return false;
