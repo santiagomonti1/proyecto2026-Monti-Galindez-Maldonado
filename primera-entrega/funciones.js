@@ -218,17 +218,17 @@ const iniciarSesion = () => {
  */
 const filtrarCatalogo = () => {
     const texto = document.getElementById("buscar-catalogo").value.toLowerCase();
-    const peliculas = document.getElementsByClassName("item-pelicula");
+    const items = document.getElementsByClassName("item-pelicula");
     let cantidadVisibles = 0;
 
-    for (let i = 0; i < peliculas.length; i++) {
-        const titulo = peliculas[i].getElementsByTagName("h3")[0].innerText.toLowerCase();
+    for (let i = 0; i < items.length; i++) {
+        const titulo = items[i].getElementsByTagName("h3")[0].innerText.toLowerCase();
 
         if (titulo.indexOf(texto) !== -1) {
-            peliculas[i].style.display = "";
+            items[i].style.display = "";
             cantidadVisibles++;
         } else {
-            peliculas[i].style.display = "none";
+            items[i].style.display = "none";
         }
     }
 
