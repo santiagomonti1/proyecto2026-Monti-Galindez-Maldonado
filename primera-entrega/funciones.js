@@ -81,6 +81,7 @@ const validarResena = (anioEstreno) => {
     const puntaje = document.getElementById("puntaje").value;
     const fecha = document.getElementById("fecha-vista").value;
     const resena = document.getElementById("resena").value;
+    const hoy = new Date().toISOString().slice(0, 10);
 
     if (puntaje === "") {
         alert("Elegí un puntaje antes de guardar tu reseña.");
@@ -104,7 +105,14 @@ const validarResena = (anioEstreno) => {
         return false;
     }
 
+    if (fecha > hoy) {
+        alert("La fecha no puede ser posterior a hoy.");
+        document.getElementById("fecha-vista").value = "";
+        return false;
+    }
+
     return true;
+
 };
 
 /**
