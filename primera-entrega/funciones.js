@@ -70,6 +70,7 @@ const peliculas = [
         votos: 160
     }
 ];
+
 /**
  * Comprueba que los campos de la reseña sean correctos. Si alguno no lo es,
  * avisa al usuario con un alert y blanquea ese campo.
@@ -112,7 +113,6 @@ const validarResena = (anioEstreno) => {
     }
 
     return true;
-
 };
 
 /**
@@ -265,6 +265,7 @@ const cargarBusqueda = () => {
         filtrarCatalogo();
     }
 };
+
 /**
  * Genera el listado del catálogo a partir del array de películas.
  * @method cargarCatalogo
@@ -294,6 +295,7 @@ const cargarCatalogo = () => {
 const seleccionarPelicula = (id) => {
     localStorage.setItem("peliculaElegida", id);
 };
+
 /**
  * Devuelve la posición de la película elegida en el catálogo.
  * Si el usuario todavía no eligió ninguna, devuelve la de La odisea.
