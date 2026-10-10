@@ -80,4 +80,4 @@ primera-entrega/
 
 ## Créditos
 
-Los pósters de las películas se obtuvieron de [The Movie Database (TMDB)](https://www.themoviedb.org/) y se usan con fines educativos.
+Los pósters y los datos de las películas se obtuvieron de [The Movie Database (TMDB)](https://www.themoviedb.org/) y se usan con fines educativos.
