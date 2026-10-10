@@ -135,6 +135,8 @@ const calcularNuevoPromedio = (promedio, votos, puntaje) => {
 const guardarResena = () => {
     const pelicula = peliculas[obtenerIdElegido()];
 
+    document.getElementById("resultado").innerText = "";
+
     if (validarResena(pelicula.anio)) {
         const puntaje = Number(document.getElementById("puntaje").value);
         const nuevoPromedio = calcularNuevoPromedio(pelicula.promedio, pelicula.votos, puntaje);
