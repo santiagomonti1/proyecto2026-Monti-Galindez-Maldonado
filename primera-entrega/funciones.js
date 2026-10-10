@@ -13,7 +13,7 @@ const peliculas = [
         titulo: "Michael",
         anio: 2026,
         director: "Antoine Fuqua",
-        genero: "Drama Musical",
+        genero: "Drama musical",
         sinopsis: "Película biográfica sobre Michael Jackson, que recorre su vida y su carrera desde sus comienzos con los Jackson 5 hasta convertirse en el Rey del Pop.",
         imagen: "poster-michael.webp",
         promedio: 3.8,
@@ -53,7 +53,7 @@ const peliculas = [
         titulo: "Spider-Man: Un nuevo día",
         anio: 2026,
         director: "Destin Cretton",
-        genero: "Ciencia Ficción",
+        genero: "Ciencia ficción",
         sinopsis: "Tras los hechos de Sin camino a casa, Peter Parker intenta seguir adelante como Spider-Man en un mundo donde nadie recuerda quién es.",
         imagen: "poster-spiderman.webp",
         promedio: 4.1,
@@ -63,13 +63,14 @@ const peliculas = [
         titulo: "Whiplash",
         anio: 2014,
         director: "Damien Chazelle",
-        genero: "Drama Musical",
+        genero: "Drama musical",
         sinopsis: "Un joven baterista ingresa a un prestigioso conservatorio de música, donde un instructor implacable lo lleva al límite en su búsqueda de la perfección.",
         imagen: "poster-whiplash.webp",
         promedio: 3.9,
         votos: 160
     }
 ];
+
 /**
  * Comprueba que los campos de la reseña sean correctos. Si alguno no lo es,
  * avisa al usuario con un alert y blanquea ese campo.
@@ -99,7 +100,7 @@ const validarResena = (anioEstreno) => {
         return false;
     }
 
-    if (resena.length < 10) {
+    if (resena.replaceAll(" ", "").length < 10) {
         alert("La reseña debe tener al menos 10 caracteres.");
         document.getElementById("resena").value = "";
         return false;
@@ -112,7 +113,6 @@ const validarResena = (anioEstreno) => {
     }
 
     return true;
-
 };
 
 /**
@@ -134,6 +134,8 @@ const calcularNuevoPromedio = (promedio, votos, puntaje) => {
  */
 const guardarResena = () => {
     const pelicula = peliculas[obtenerIdElegido()];
+
+    document.getElementById("resultado").innerText = "";
 
     if (validarResena(pelicula.anio)) {
         const puntaje = Number(document.getElementById("puntaje").value);
@@ -218,17 +220,17 @@ const iniciarSesion = () => {
  */
 const filtrarCatalogo = () => {
     const texto = document.getElementById("buscar-catalogo").value.toLowerCase();
-    const peliculas = document.getElementsByClassName("item-pelicula");
+    const items = document.getElementsByClassName("item-pelicula");
     let cantidadVisibles = 0;
 
-    for (let i = 0; i < peliculas.length; i++) {
-        const titulo = peliculas[i].getElementsByTagName("h3")[0].innerText.toLowerCase();
+    for (let i = 0; i < items.length; i++) {
+        const titulo = items[i].getElementsByTagName("h3")[0].innerText.toLowerCase();
 
         if (titulo.indexOf(texto) !== -1) {
-            peliculas[i].style.display = "";
+            items[i].style.display = "";
             cantidadVisibles++;
         } else {
-            peliculas[i].style.display = "none";
+            items[i].style.display = "none";
         }
     }
 
@@ -263,6 +265,7 @@ const cargarBusqueda = () => {
         filtrarCatalogo();
     }
 };
+
 /**
  * Genera el listado del catálogo a partir del array de películas.
  * @method cargarCatalogo
@@ -292,6 +295,7 @@ const cargarCatalogo = () => {
 const seleccionarPelicula = (id) => {
     localStorage.setItem("peliculaElegida", id);
 };
+
 /**
  * Devuelve la posición de la película elegida en el catálogo.
  * Si el usuario todavía no eligió ninguna, devuelve la de La odisea.
