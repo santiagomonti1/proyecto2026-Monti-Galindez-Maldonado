@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
     <script src="funciones.js"></script>
 </head>
-<body onload="cargarTop()">
+<body onload="cargarTop(); actualizarMenu()">
     <header class="encabezado">
         <div class="contenedor">
             <img src="imagenes/favicon.png" alt="Logo Filmoteca" class="logo">
@@ -22,9 +22,10 @@
                 <ul class="menu-lista">
                     <li><a href="index.html" class="activo">Inicio</a></li>
                     <li><a href="catalogo.html">Catálogo</a></li>
-                    <li><a href="diario.html">Mi diario</a></li>
+                    <li id="menu-diario"><a href="diario.html">Mi diario</a></li>
                     <li><a href="ficha.html">Ficha</a></li>
-                    <li><a href="login.html">Cerrar sesión</a></li>
+                    <li id="menu-ingresar"><a href="login.html">Ingresar</a></li>
+                    <li id="menu-salir"><a href="login.html" onclick="cerrarSesion()">Cerrar sesión</a></li>
                 </ul>
             </nav>
         </div>
