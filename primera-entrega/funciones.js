@@ -210,6 +210,7 @@ const iniciarSesion = () => {
         return;
     }
 
+    localStorage.setItem("usuarioActivo", usuario);
     window.location.href = "index.html";
 };
 
@@ -352,4 +353,40 @@ const cargarTop = () => {
     });
 
     document.getElementById("top-peliculas").innerHTML = contenido;
+};
+
+/**
+ * Muestra u oculta las opciones del menú según si hay una sesión iniciada.
+ * @method actualizarMenu
+ */
+const actualizarMenu = () => {
+    const usuario = localStorage.getItem("usuarioActivo");
+
+    if (usuario === null) {
+        document.getElementById("menu-diario").style.display = "none";
+        document.getElementById("menu-salir").style.display = "none";
+        document.getElementById("menu-ingresar").style.display = "";
+    } else {
+        document.getElementById("menu-diario").style.display = "";
+        document.getElementById("menu-salir").style.display = "";
+        document.getElementById("menu-ingresar").style.display = "none";
+    }
+};
+
+/**
+ * Cierra la sesión borrando el usuario guardado en localStorage.
+ * @method cerrarSesion
+ */
+const cerrarSesion = () => {
+    localStorage.removeItem("usuarioActivo");
+};
+
+/**
+ * Si no hay una sesión iniciada, lleva al usuario a la página de login.
+ * @method verificarSesion
+ */
+const verificarSesion = () => {
+    if (localStorage.getItem("usuarioActivo") === null) {
+        window.location.href = "login.html";
+    }
 };
