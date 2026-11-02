@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
     <script src="funciones.js"></script>
 </head>
-<body onload="verificarSesion(); actualizarMenu(); cargarHistorial()">
+<body onload="verificarSesion(); actualizarMenu(); cargarPerfil(); cargarFavoritas(); cargarHistorial()">
     <header class="encabezado">
         <div class="contenedor">
             <img src="imagenes/favicon.png" alt="Logo Filmoteca" class="logo">
@@ -34,32 +34,16 @@
     <main>
         <div class="contenedor">
             <section class="perfil">
-                <div class="avatar">S</div>
+                <div class="avatar" id="perfil-avatar"></div>
                 <div class="perfil-info">
-                    <h2>Santiago</h2>
-                    <p>Puntaje promedio: 4.5</p>
+                    <h2 id="perfil-nombre"></h2>
+                    <p id="perfil-promedio"></p>
                 </div>
             </section>
 
             <section>
                 <h2>Tus favoritas</h2>
-                <div class="grilla-tarjetas">
-                    <article class="tarjeta">
-                        <img src="imagenes/poster-socialnetwork.webp" alt="Póster de la película La red social" class="poster">
-                        <div class="tarjeta-info">
-                            <h3>La red social</h3>
-                            <p class="puntaje">Tu puntaje: 5</p>
-                        </div>
-                    </article>
-
-                    <article class="tarjeta">
-                        <img src="imagenes/poster-fightclub.webp" alt="Póster de la película El club de la pelea" class="poster">
-                        <div class="tarjeta-info">
-                            <h3>El club de la pelea</h3>
-                            <p class="puntaje">Tu puntaje: 5</p>
-                        </div>
-                    </article>
-                </div>
+                <div class="grilla-tarjetas" id="favoritas"></div>
             </section>
 
             <section>

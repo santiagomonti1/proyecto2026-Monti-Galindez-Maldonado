@@ -248,6 +248,65 @@ const cargarHistorial = () => {
     document.getElementById("historial").innerHTML = contenido;
 };
 
+/**
+ * Completa el perfil del diario con el nombre del usuario que inició sesión
+ * y el promedio de los puntajes que puso en sus reseñas.
+ * @method cargarPerfil
+ */
+const cargarPerfil = () => {
+    const usuario = localStorage.getItem("usuarioActivo");
+    const resenas = obtenerResenas().filter(r => r.usuario === usuario);
+    const nombre = usuario.charAt(0).toUpperCase() + usuario.slice(1);
+    let suma = 0;
+
+    document.getElementById("perfil-avatar").innerText = nombre.charAt(0);
+    document.getElementById("perfil-nombre").innerText = nombre;
+
+    if (resenas.length === 0) {
+        document.getElementById("perfil-promedio").innerText = "Todavía no puntuaste películas";
+        return;
+    }
+
+    resenas.forEach((resena) => {
+        suma += resena.puntaje;
+    });
+
+    document.getElementById("perfil-promedio").innerText = `Puntaje promedio: ${(suma / resenas.length).toFixed(1)}`;
+};
+
+/**
+ * Muestra como favoritas las películas a las que el usuario les puso 5 puntos,
+ * sin repetir películas.
+ * @method cargarFavoritas
+ */
+const cargarFavoritas = () => {
+    const usuario = localStorage.getItem("usuarioActivo");
+    const resenas = obtenerResenas().filter(r => r.usuario === usuario && r.puntaje === 5);
+    const agregadas = [];
+    let contenido = "";
+
+    resenas.forEach((resena) => {
+        if (agregadas.indexOf(resena.idPelicula) === -1) {
+            const pelicula = peliculas[resena.idPelicula];
+            agregadas.push(resena.idPelicula);
+
+            contenido += `<article class="tarjeta">
+                <img src="imagenes/${pelicula.imagen}" alt="Póster de la película ${pelicula.titulo}" class="poster">
+                <div class="tarjeta-info">
+                    <h3>${pelicula.titulo}</h3>
+                    <p class="puntaje">Tu puntaje: 5</p>
+                </div>
+            </article>`;
+        }
+    });
+
+    if (contenido === "") {
+        contenido = "<p class=\"sin-resenas\">Las películas que puntúes con 5 van a aparecer acá.</p>";
+    }
+
+    document.getElementById("favoritas").innerHTML = contenido;
+};
+
 // funciones para login
 
 /**
