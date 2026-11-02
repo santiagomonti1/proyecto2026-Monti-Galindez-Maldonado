@@ -276,6 +276,30 @@ button:hover {
     border-top: 1px solid var(--color-borde);
 }
 
+.resenas {
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid var(--color-borde);
+}
+
+.resena-guardada {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--color-borde);
+}
+
+.resena-guardada p {
+    margin: 0;
+}
+
+.resena-datos,
+.sin-resenas {
+    color: var(--color-texto-suave);
+}
+
+.resena-datos {
+    margin-bottom: 6px;
+}
+
 /* ===== Diario ===== */
 .perfil {
     display: flex;

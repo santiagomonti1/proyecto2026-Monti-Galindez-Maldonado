@@ -128,22 +128,124 @@ const calcularNuevoPromedio = (promedio, votos, puntaje) => {
 };
 
 /**
- * Valida la reseña y, si es correcta, calcula y muestra el nuevo puntaje promedio
- * de la película elegida.
+ * Devuelve las reseñas guardadas en localStorage.
+ * Si todavía no hay ninguna, devuelve un array vacío.
+ * @method obtenerResenas
+ * @return {Array} Lista de reseñas guardadas
+ */
+const obtenerResenas = () => {
+    const guardadas = localStorage.getItem("resenas");
+
+    if (guardadas === null) {
+        return [];
+    }
+
+    return JSON.parse(guardadas);
+};
+
+/**
+ * Valida la reseña y, si es correcta, la guarda en localStorage y muestra
+ * el nuevo puntaje promedio de la película elegida.
+ * Para guardar una reseña hace falta tener una sesión iniciada.
  * @method guardarResena
  */
 const guardarResena = () => {
-    const pelicula = peliculas[obtenerIdElegido()];
+    const id = obtenerIdElegido();
+    const pelicula = peliculas[id];
+    const usuario = localStorage.getItem("usuarioActivo");
 
     document.getElementById("resultado").innerText = "";
+
+    if (usuario === null) {
+        alert("Iniciá sesión para guardar tu reseña.");
+        return;
+    }
 
     if (validarResena(pelicula.anio)) {
         const puntaje = Number(document.getElementById("puntaje").value);
         const nuevoPromedio = calcularNuevoPromedio(pelicula.promedio, pelicula.votos, puntaje);
+        const resenas = obtenerResenas();
+
+        resenas.push({
+            usuario: usuario,
+            idPelicula: id,
+            titulo: pelicula.titulo,
+            puntaje: puntaje,
+            fecha: document.getElementById("fecha-vista").value,
+            texto: document.getElementById("resena").value
+        });
+        localStorage.setItem("resenas", JSON.stringify(resenas));
 
         document.getElementById("resultado").innerText =
             `¡Reseña guardada! Nuevo puntaje promedio: ${nuevoPromedio.toFixed(2)} / 5 (${pelicula.votos + 1} votos)`;
+
+        document.getElementById("puntaje").value = "";
+        document.getElementById("fecha-vista").value = "";
+        document.getElementById("resena").value = "";
+        mostrarResenasPelicula();
     }
+};
+
+/**
+ * Convierte una fecha del formato AAAA-MM-DD al formato DD/MM/AAAA.
+ * @method formatearFecha
+ * @param {string} fecha - Fecha en formato AAAA-MM-DD
+ * @return {string} Fecha en formato DD/MM/AAAA
+ */
+const formatearFecha = (fecha) => {
+    const partes = fecha.split("-");
+    return `${partes[2]}/${partes[1]}/${partes[0]}`;
+};
+
+/**
+ * Muestra en la ficha las reseñas guardadas de la película elegida.
+ * @method mostrarResenasPelicula
+ */
+const mostrarResenasPelicula = () => {
+    const id = obtenerIdElegido();
+    const resenas = obtenerResenas().filter(r => r.idPelicula === id);
+    let contenido = "";
+
+    if (resenas.length === 0) {
+        contenido = "<p class=\"sin-resenas\">Todavía no hay reseñas de esta película.</p>";
+    }
+
+    resenas.forEach((resena) => {
+        contenido += `<article class="resena-guardada">
+            <p class="resena-datos"><strong>${resena.usuario}</strong> · ${resena.puntaje} / 5 · <time datetime="${resena.fecha}">${formatearFecha(resena.fecha)}</time></p>
+            <p>${resena.texto}</p>
+        </article>`;
+    });
+
+    document.getElementById("lista-resenas").innerHTML = contenido;
+};
+
+/**
+ * Completa el historial del diario con las reseñas que guardó el usuario,
+ * de la más reciente a la más antigua.
+ * @method cargarHistorial
+ */
+const cargarHistorial = () => {
+    const usuario = localStorage.getItem("usuarioActivo");
+    const resenas = obtenerResenas().filter(r => r.usuario === usuario);
+    let contenido = "";
+
+    resenas.sort((a, b) => b.fecha.localeCompare(a.fecha));
+
+    if (resenas.length === 0) {
+        contenido = "<tr><td colspan=\"4\">Todavía no guardaste reseñas.</td></tr>";
+    }
+
+    resenas.forEach((resena) => {
+        contenido += `<tr>
+            <td>${resena.titulo}</td>
+            <td><time datetime="${resena.fecha}">${formatearFecha(resena.fecha)}</time></td>
+            <td>${resena.puntaje}</td>
+            <td>${resena.texto}</td>
+        </tr>`;
+    });
+
+    document.getElementById("historial").innerHTML = contenido;
 };
 
 // funciones para login
@@ -327,6 +429,7 @@ const cargarFicha = () => {
     document.getElementById("ficha-puntaje").innerText = `${pelicula.promedio} / 5 · Puntaje promedio (${pelicula.votos} votos)`;
     document.getElementById("ficha-sinopsis").innerText = pelicula.sinopsis;
     document.title = `Filmoteca | ${pelicula.titulo}`;
+    mostrarResenasPelicula();
 };
 
 /**
