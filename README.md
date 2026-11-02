@@ -37,13 +37,13 @@ Filmoteca permite al usuario:
 
 ### Páginas del sitio
 
-| Página | Archivo | Contenido |
-|--------|---------|-----------|
-| Inicio | `index.html` | Buscador y top de películas de la semana |
-| Catálogo | `catalogo.html` | Listado de películas con buscador |
-| Ficha | `ficha.html` | Información de una película y formulario de reseña |
-| Mi diario | `diario.html` | Perfil, películas favoritas e historial |
-| Iniciar sesión | `login.html` | Formulario de ingreso |
+| Página         | Archivo         | Contenido                                          |
+| -------------- | --------------- | -------------------------------------------------- |
+| Inicio         | `index.html`    | Buscador y top de películas de la semana           |
+| Catálogo       | `catalogo.html` | Listado de películas con buscador                  |
+| Ficha          | `ficha.html`    | Información de una película y formulario de reseña |
+| Mi diario      | `diario.html`   | Perfil, películas favoritas e historial            |
+| Iniciar sesión | `login.html`    | Formulario de ingreso                              |
 
 ### Funcionalidades con JavaScript
 
@@ -53,9 +53,9 @@ Filmoteca permite al usuario:
 
 ### Usuario de prueba
 
-| Usuario | Contraseña |
-|---------|------------|
-| santiago | santi2026 |
+| Usuario  | Contraseña |
+| -------- | ---------- |
+| santiago | santi2026  |
 
 ## Tecnologías utilizadas
 
@@ -63,7 +63,7 @@ Filmoteca permite al usuario:
 - CSS3 (variables, Flexbox, media queries)
 - JavaScript
 - [Google Fonts](https://fonts.google.com/) (Bebas Neue)
-- Figma (wireframes y wireflow)
+- Figma (mockups desktop y mobile, y flujo de navegación)
 - Git y GitHub
 
 ## Estructura del repositorio
@@ -75,7 +75,7 @@ primera-entrega/
 ├── funciones.js
 ├── imagenes/      → pósters y favicon
 ├── Sketch/        → bocetos desktop y mobile
-└── Wireframe/     → wireframes desktop y mobile, y wireflow (PDF)
+└── Mockup/        → mockups desktop y mobile, y flujo de navegación (PDF)
 ```
 
 ## Créditos
