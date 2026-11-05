@@ -1,0 +1,74 @@
+@use '@styles/variables';
+
+// ===== Formularios y botones =====
+
+input,
+select,
+textarea {
+    background-color: variables.$color-superficie;
+    color: variables.$color-texto;
+    border: 1px solid variables.$color-borde;
+    border-radius: variables.$radio;
+    padding: 10px 12px;
+    font-family: inherit;
+    font-size: 1rem;
+
+    &:focus {
+        border-color: variables.$color-acento-claro;
+    }
+
+    // Campo con error: lo marca el atributo aria-invalid del componente Input
+    &[aria-invalid="true"] {
+        border-color: variables.$color-acento-claro;
+    }
+}
+
+.campo {
+    margin-bottom: 16px;
+
+    label {
+        display: block;
+        margin-bottom: 6px;
+        color: variables.$color-texto-suave;
+    }
+
+    textarea {
+        width: 100%;
+    }
+}
+
+.buscador {
+    margin: 16px 0 24px;
+
+    input {
+        width: 100%;
+        max-width: 420px;
+    }
+}
+
+.mensaje-error {
+    margin: 6px 0 0;
+    font-size: 0.9rem;
+    color: variables.$color-acento-claro;
+}
+
+.resultado {
+    margin-top: 12px;
+    color: variables.$color-acento-claro;
+}
+
+// ----- Botón genérico (componente Button) -----
+.boton {
+    background-color: variables.$color-acento;
+    color: variables.$color-texto;
+    border: none;
+    border-radius: variables.$radio;
+    padding: 10px 24px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: variables.$color-acento-claro;
+    }
+}

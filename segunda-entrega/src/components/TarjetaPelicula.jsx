@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 /**
  * Tarjeta con el póster, el título y el año de una película.
- * Se reutiliza en Inicio, Catálogo y Mi diario.
+ * Se reutiliza en Inicio y en Mi diario.
  * Lo que cambia en cada página (director, puntaje...) se pasa como children.
  * @param {Object} props
  * @param {Object} props.pelicula - Datos de la película (id, titulo, anio, imagen)

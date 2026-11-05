@@ -1,0 +1,82 @@
+@use '@styles/variables';
+
+// ===== Layout: estructura común a todas las páginas =====
+
+// El footer queda siempre abajo, aunque la página tenga poco contenido.
+.pagina {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+    padding: 24px 0;
+}
+
+// ----- Header y menú -----
+.encabezado {
+    border-bottom: 1px solid variables.$color-borde;
+    padding: 12px 0;
+
+    .contenedor {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    nav {
+        margin-left: auto;
+    }
+}
+
+.logo {
+    width: 36px;
+}
+
+.menu-lista {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    a {
+        color: variables.$color-texto-suave;
+        text-decoration: none;
+        transition: color 0.3s ease;
+
+        // NavLink agrega la clase "active" al link de la página actual
+        &:hover,
+        &.active {
+            color: variables.$color-texto;
+        }
+    }
+}
+
+// "Cerrar sesión" es un botón, pero se ve como los links del menú
+.boton-menu {
+    padding: 0;
+    background: none;
+    border: none;
+    color: variables.$color-texto-suave;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: variables.$color-texto;
+    }
+}
+
+// ----- Footer -----
+.pie {
+    border-top: 1px solid variables.$color-borde;
+    margin-top: 40px;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.9rem;
+    color: variables.$color-texto-suave;
+}

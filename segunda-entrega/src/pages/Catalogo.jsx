@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Input from "@components/Input";
-import TarjetaPelicula from "@components/TarjetaPelicula";
 import { obtenerPeliculas } from "@api/filmotecaApi";
 
 /**
@@ -13,6 +13,7 @@ const Catalogo = () => {
     const [error, setError] = useState("");
 
     useEffect(() => {
+        document.title = "Filmoteca | Catálogo";   
         /**
          * Pide las películas al mock y las guarda en el estado.
          */
@@ -51,14 +52,18 @@ const Catalogo = () => {
 
             {error !== "" && <p className="mensaje-error" role="alert">{error}</p>}
 
-            <div className="grilla-tarjetas">
-                {visibles.map((pelicula) => (
-                    <TarjetaPelicula key={pelicula.id} pelicula={pelicula}>
+            {visibles.map((pelicula) => (
+                <article className="item-pelicula" key={pelicula.id}>
+                    <img src={`/imagenes/${pelicula.imagen}`} alt={`Póster de ${pelicula.titulo}`} className="poster poster-chico" />
+                    <div className="item-info">
+                        <h3>
+                            <Link to={`/pelicula/${pelicula.id}`}>{pelicula.titulo} ({pelicula.anio})</Link>
+                        </h3>
                         <p>Género: {pelicula.genero}</p>
                         <p>Director: {pelicula.director}</p>
-                    </TarjetaPelicula>
-                ))}
-            </div>
+                    </div>
+                </article>
+            ))}
 
             {peliculas.length > 0 && visibles.length === 0 && (
                 <div className="sin-resultados">

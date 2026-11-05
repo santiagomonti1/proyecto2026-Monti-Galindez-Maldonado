@@ -1,0 +1,18 @@
+@use '@styles/variables';
+
+// ===== Mixins =====
+
+// Caja con fondo, borde y esquinas redondeadas.
+// Se usa en las tarjetas, la caja del login, el aviso de "sin resultados" y el avatar.
+@mixin caja($radio-borde: 8px) {
+    background-color: variables.$color-superficie;
+    border: 1px solid variables.$color-borde;
+    border-radius: $radio-borde;
+}
+
+// Línea que separa una sección de la anterior (formulario y reseñas de la ficha).
+@mixin separador {
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid variables.$color-borde;
+}

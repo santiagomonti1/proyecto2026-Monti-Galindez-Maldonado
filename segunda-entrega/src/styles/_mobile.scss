@@ -1,0 +1,33 @@
+@use '@styles/variables';
+
+// ===== Mobile =====
+
+@media (max-width: variables.$ancho-mobile) {
+    .encabezado {
+        .contenedor {
+            flex-wrap: wrap;
+        }
+
+        nav {
+            margin-left: 0;
+            width: 100%;
+        }
+    }
+
+    .menu-lista {
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    .tarjeta {
+        width: calc(50% - 10px);
+    }
+
+    .ficha {
+        flex-direction: column;
+    }
+
+    .poster-grande {
+        margin: 0 auto;
+    }
+}

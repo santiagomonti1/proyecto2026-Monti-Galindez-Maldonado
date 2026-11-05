@@ -1,0 +1,55 @@
+@use '@styles/variables';
+@use '@styles/mixins';
+
+// ===== Ficha de película =====
+
+.ficha {
+    display: flex;
+    align-items: flex-start;
+    gap: 32px;
+}
+
+.ficha-info {
+    flex: 1;
+
+    h2 {
+        margin-top: 0;
+        font-size: 1.8rem;
+        font-weight: bold;
+    }
+
+    .puntaje {
+        color: variables.$color-acento-claro;
+    }
+}
+
+.ficha-datos {
+    margin: 0;
+    color: variables.$color-texto-suave;
+}
+
+.formulario {
+    @include mixins.separador;
+}
+
+.resenas {
+    @include mixins.separador;
+}
+
+.resena-guardada {
+    padding: 12px 0;
+    border-bottom: 1px solid variables.$color-borde;
+
+    p {
+        margin: 0;
+    }
+}
+
+.resena-datos {
+    margin-bottom: 6px;
+    color: variables.$color-texto-suave;
+}
+
+.sin-resenas {
+    color: variables.$color-texto-suave;
+}

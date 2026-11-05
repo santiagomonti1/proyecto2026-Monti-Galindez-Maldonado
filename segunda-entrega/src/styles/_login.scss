@@ -1,0 +1,25 @@
+@use '@styles/variables';
+@use '@styles/mixins';
+
+// ===== Login =====
+
+.caja-login {
+    @include mixins.caja;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 24px;
+
+    h2 {
+        margin-top: 0;
+    }
+
+    input {
+        width: 100%;
+        background-color: variables.$color-fondo;
+    }
+
+    .boton {
+        width: 100%;
+        margin-bottom: 8px;
+    }
+}

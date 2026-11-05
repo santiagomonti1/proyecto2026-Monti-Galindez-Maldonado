@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Input from "@components/Input";
 import Button from "@components/Button";
@@ -50,6 +50,10 @@ const Login = () => {
     const [errorContrasena, setErrorContrasena] = useState("");
     const [errorServidor, setErrorServidor] = useState("");
     const navigate = useNavigate();
+
+    useEffect(() => {                         
+        document.title = "Filmoteca | Iniciar sesión"; 
+    }, []);
 
     /**
      * Guarda lo que se escribe en el usuario y lo valida en el momento.
