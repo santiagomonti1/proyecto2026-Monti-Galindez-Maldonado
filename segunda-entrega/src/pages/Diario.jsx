@@ -22,6 +22,8 @@ const Diario = () => {
             return;
         }
 
+        document.title = "Filmoteca | Mi diario"
+
         /**
          * Pide al mock las reseñas del usuario y las películas, y las guarda en el estado.
          */

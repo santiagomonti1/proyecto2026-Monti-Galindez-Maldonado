@@ -13,6 +13,7 @@ const Catalogo = () => {
     const [error, setError] = useState("");
 
     useEffect(() => {
+        document.title = "Filmoteca | Catálogo";   
         /**
          * Pide las películas al mock y las guarda en el estado.
          */

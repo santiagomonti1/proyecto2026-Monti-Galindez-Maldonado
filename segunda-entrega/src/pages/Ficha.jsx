@@ -75,6 +75,8 @@ const Ficha = () => {
     const [resultado, setResultado] = useState("");
 
     useEffect(() => {
+        document.title = "Filmoteca | Ficha";  
+
         /**
          * Pide al mock la película y sus reseñas, y las guarda en el estado.
          */
@@ -84,6 +86,7 @@ const Ficha = () => {
                 const datosResenas = await obtenerResenasDePelicula(id);
                 setPelicula(datosPelicula);
                 setResenas(datosResenas);
+                document.title = `Filmoteca | ${datosPelicula.titulo}`;  
             } catch (error) {
                 console.error("Error al cargar la ficha:", error);
                 setErrorCarga("No se pudo cargar la película. Volvé al catálogo y probá de nuevo.");

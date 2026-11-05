@@ -14,6 +14,8 @@ const Inicio = () => {
     const [error, setError] = useState("");
 
     useEffect(() => {
+        document.title = "Filmoteca | Inicio";
+
         /**
          * Pide las películas al mock y las guarda en el estado.
          */
