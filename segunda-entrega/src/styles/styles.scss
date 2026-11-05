@@ -1,0 +1,57 @@
+@use '@styles/variables';
+@use '@styles/mixins';
+
+// ===== Mi diario =====
+
+.perfil {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.avatar {
+    @include mixins.caja(50%);
+    width: 56px;
+    height: 56px;
+    text-align: center;
+    line-height: 54px;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.perfil-info {
+    h2,
+    p {
+        margin: 0;
+    }
+
+    p {
+        color: variables.$color-texto-suave;
+    }
+}
+
+.tabla-historial {
+    width: 100%;
+    border-collapse: collapse;
+
+    caption {
+        text-align: left;
+        margin-bottom: 8px;
+        color: variables.$color-texto-suave;
+    }
+
+    th,
+    td {
+        padding: 10px 12px;
+        text-align: left;
+        border-bottom: 1px solid variables.$color-borde;
+    }
+
+    th {
+        color: variables.$color-texto-suave;
+    }
+
+    tbody tr:hover {
+        background-color: variables.$color-superficie;
+    }
+}

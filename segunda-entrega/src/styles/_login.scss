@@ -1,0 +1,12 @@
+// ===== Archivo principal de estilos =====
+// Junta todos los archivos parciales. Se importa una sola vez, en main.jsx.
+// _mobile va al final para que sus reglas pisen a las anteriores en pantallas chicas.
+
+@use '@styles/base';
+@use '@styles/layout';
+@use '@styles/formularios';
+@use '@styles/tarjetas';
+@use '@styles/ficha';
+@use '@styles/diario';
+@use '@styles/login';
+@use '@styles/mobile';
