@@ -98,7 +98,7 @@ const Ficha = () => {
 
     /**
      * Guarda el puntaje elegido y lo valida en el momento.
-     * @param {Event} e - Evento del select
+    * @param {Object} e - Evento del select
      */
     const cambiarPuntaje = (e) => {
         setPuntaje(e.target.value);
@@ -107,7 +107,7 @@ const Ficha = () => {
 
     /**
      * Guarda la fecha elegida y la valida en el momento.
-     * @param {Event} e - Evento del input
+     * @param {Object} e - Evento del input
      */
     const cambiarFecha = (e) => {
         setFecha(e.target.value);
@@ -116,7 +116,7 @@ const Ficha = () => {
 
     /**
      * Guarda el texto de la reseña y lo valida en el momento.
-     * @param {Event} e - Evento del textarea
+     * @param {Object} e - Evento del textarea
      */
     const cambiarTexto = (e) => {
         setTexto(e.target.value);

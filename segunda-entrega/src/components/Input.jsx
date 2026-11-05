@@ -12,10 +12,10 @@
  * @param {string} props.label - Texto de la etiqueta
  * @param {string} props.type - Tipo de input: text, password, date...
  * @param {string} props.value - Valor actual (viene del estado de la página)
- * @param {Function} props.onChange - Función que se ejecuta cada vez que el usuario escribe
- * @param {string} props.placeholder - Texto de ayuda dentro del campo
- * @param {number} props.maxLength - Cantidad máxima de caracteres
- * @param {string} props.error - Mensaje de error; si está vacío, el campo es correcto
+ * @param {function(Object): void} props.onChange - Función que se ejecuta cada vez que el usuario escribe
+ * @param {string} [props.placeholder] - Texto de ayuda dentro del campo (opcional)
+ * @param {number} [props.maxLength] - Cantidad máxima de caracteres (opcional)
+ * @param {string} [props.error] - Mensaje de error; si está vacío o no se pasa, el campo es correcto
  */
 const Input = ({ id, label, type, value, onChange, placeholder, maxLength, error = "" }) => {
     return (

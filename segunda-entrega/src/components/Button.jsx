@@ -1,7 +1,7 @@
 /**
  * Botón genérico del sitio. Se reutiliza en Login y en Ficha.
  * @param {Object} props
- * @param {Function} props.onClick - Función que se ejecuta al hacer clic
+ * @param {function(Object): void} props.onClick - Función que se ejecuta al hacer clic
  * @param {*} props.children - Texto o contenido del botón
  */
 const Button = ({ onClick, children }) => {
