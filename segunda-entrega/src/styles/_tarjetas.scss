@@ -1,7 +1,7 @@
 @use '@styles/variables';
 @use '@styles/mixins';
 
-// ===== Pósters y tarjetas de películas (Inicio, Catálogo y Mi diario) =====
+// ===== Pósters, tarjetas (Inicio y Mi diario) y listado (Catálogo) =====
 
 .poster {
     width: 100%;
@@ -10,6 +10,10 @@
 
 .poster-grande {
     width: 300px;
+}
+
+.poster-chico {
+    width: 60px;
 }
 
 .grilla-tarjetas {
@@ -30,6 +34,22 @@
 .tarjeta-info {
     padding: 12px;
 
+    .puntaje {
+        color: variables.$color-acento-claro;
+    }
+}
+
+// ----- Listado del catálogo: póster chico a la izquierda y datos al lado -----
+.item-pelicula {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+// Título y datos: iguales en las tarjetas y en el listado del catálogo
+.tarjeta-info,
+.item-info {
     h3 {
         margin: 0 0 4px;
         font-size: 1rem;
@@ -48,10 +68,6 @@
         margin: 0;
         font-size: 0.9rem;
         color: variables.$color-texto-suave;
-    }
-
-    .puntaje {
-        color: variables.$color-acento-claro;
     }
 }
 
