@@ -1,16 +1,18 @@
-// ===== Variables =====
-// Colores, tipografías y medidas que se repiten en todo el sitio.
+@use '@styles/variables';
 
-$color-fondo: #121212;
-$color-superficie: #212121;
-$color-borde: #373737;
-$color-texto: #ebebeb;
-$color-texto-suave: #9e9e9e;
-$color-acento: #8c2b2b;
-$color-acento-claro: #c76159;
+// ===== Mixins =====
 
-$fuente-base: Arial, Helvetica, sans-serif;
-$fuente-titulos: "Bebas Neue", Arial, sans-serif;
+// Caja con fondo, borde y esquinas redondeadas.
+// Se usa en las tarjetas, la caja del login, el aviso de "sin resultados" y el avatar.
+@mixin caja($radio-borde: 8px) {
+    background-color: variables.$color-superficie;
+    border: 1px solid variables.$color-borde;
+    border-radius: $radio-borde;
+}
 
-$radio: 6px;
-$ancho-mobile: 700px;
+// Línea que separa una sección de la anterior (formulario y reseñas de la ficha).
+@mixin separador {
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid variables.$color-borde;
+}

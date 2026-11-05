@@ -1,73 +1,57 @@
 @use '@styles/variables';
 @use '@styles/mixins';
 
-// ===== Pósters y tarjetas de películas (Inicio, Catálogo y Mi diario) =====
+// ===== Mi diario =====
 
-.poster {
-    width: 100%;
-    border-radius: variables.$radio;
-}
-
-.poster-grande {
-    width: 300px;
-}
-
-.grilla-tarjetas {
+.perfil {
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    align-items: center;
+    gap: 16px;
 }
 
-.tarjeta {
-    @include mixins.caja;
-    width: 180px;
-
-    .poster {
-        border-radius: 8px 8px 0 0;
-    }
+.avatar {
+    @include mixins.caja(50%);
+    width: 56px;
+    height: 56px;
+    text-align: center;
+    line-height: 54px;
+    font-size: 1.4rem;
+    font-weight: bold;
 }
 
-.tarjeta-info {
-    padding: 12px;
-
-    h3 {
-        margin: 0 0 4px;
-        font-size: 1rem;
-
-        a {
-            color: variables.$color-texto;
-            text-decoration: none;
-
-            &:hover {
-                color: variables.$color-acento-claro;
-            }
-        }
+.perfil-info {
+    h2,
+    p {
+        margin: 0;
     }
 
     p {
-        margin: 0;
-        font-size: 0.9rem;
+        color: variables.$color-texto-suave;
+    }
+}
+
+.tabla-historial {
+    width: 100%;
+    border-collapse: collapse;
+
+    caption {
+        text-align: left;
+        margin-bottom: 8px;
         color: variables.$color-texto-suave;
     }
 
-    .puntaje {
-        color: variables.$color-acento-claro;
+    th,
+    td {
+        padding: 10px 12px;
+        text-align: left;
+        border-bottom: 1px solid variables.$color-borde;
     }
-}
 
-// ----- Aviso cuando la búsqueda no encuentra películas -----
-.sin-resultados {
-    @include mixins.caja;
-    max-width: 400px;
-    padding: 24px;
-    text-align: center;
-
-    p {
-        margin: 4px 0;
+    th {
+        color: variables.$color-texto-suave;
     }
-}
 
-.sin-resultados-icono {
-    font-size: 2rem;
-    color: variables.$color-acento-claro;
+    tbody tr:hover {
+        background-color: variables.$color-superficie;
+    }
 }

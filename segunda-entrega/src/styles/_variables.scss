@@ -1,55 +1,16 @@
-@use '@styles/variables';
-@use '@styles/mixins';
+// ===== Variables =====
+// Colores, tipografías y medidas que se repiten en todo el sitio.
 
-// ===== Ficha de película =====
+$color-fondo: #121212;
+$color-superficie: #212121;
+$color-borde: #373737;
+$color-texto: #ebebeb;
+$color-texto-suave: #9e9e9e;
+$color-acento: #8c2b2b;
+$color-acento-claro: #c76159;
 
-.ficha {
-    display: flex;
-    align-items: flex-start;
-    gap: 32px;
-}
+$fuente-base: Arial, Helvetica, sans-serif;
+$fuente-titulos: "Bebas Neue", Arial, sans-serif;
 
-.ficha-info {
-    flex: 1;
-
-    h2 {
-        margin-top: 0;
-        font-size: 1.8rem;
-        font-weight: bold;
-    }
-
-    .puntaje {
-        color: variables.$color-acento-claro;
-    }
-}
-
-.ficha-datos {
-    margin: 0;
-    color: variables.$color-texto-suave;
-}
-
-.formulario {
-    @include mixins.separador;
-}
-
-.resenas {
-    @include mixins.separador;
-}
-
-.resena-guardada {
-    padding: 12px 0;
-    border-bottom: 1px solid variables.$color-borde;
-
-    p {
-        margin: 0;
-    }
-}
-
-.resena-datos {
-    margin-bottom: 6px;
-    color: variables.$color-texto-suave;
-}
-
-.sin-resenas {
-    color: variables.$color-texto-suave;
-}
+$radio: 6px;
+$ancho-mobile: 700px;

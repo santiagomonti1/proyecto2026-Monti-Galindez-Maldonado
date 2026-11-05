@@ -1,74 +1,55 @@
 @use '@styles/variables';
+@use '@styles/mixins';
 
-// ===== Formularios y botones =====
+// ===== Ficha de película =====
 
-input,
-select,
-textarea {
-    background-color: variables.$color-superficie;
-    color: variables.$color-texto;
-    border: 1px solid variables.$color-borde;
-    border-radius: variables.$radio;
-    padding: 10px 12px;
-    font-family: inherit;
-    font-size: 1rem;
+.ficha {
+    display: flex;
+    align-items: flex-start;
+    gap: 32px;
+}
 
-    &:focus {
-        border-color: variables.$color-acento-claro;
+.ficha-info {
+    flex: 1;
+
+    h2 {
+        margin-top: 0;
+        font-size: 1.8rem;
+        font-weight: bold;
     }
 
-    // Campo con error: lo marca el atributo aria-invalid del componente Input
-    &[aria-invalid="true"] {
-        border-color: variables.$color-acento-claro;
+    .puntaje {
+        color: variables.$color-acento-claro;
     }
 }
 
-.campo {
-    margin-bottom: 16px;
+.ficha-datos {
+    margin: 0;
+    color: variables.$color-texto-suave;
+}
 
-    label {
-        display: block;
-        margin-bottom: 6px;
-        color: variables.$color-texto-suave;
-    }
+.formulario {
+    @include mixins.separador;
+}
 
-    textarea {
-        width: 100%;
+.resenas {
+    @include mixins.separador;
+}
+
+.resena-guardada {
+    padding: 12px 0;
+    border-bottom: 1px solid variables.$color-borde;
+
+    p {
+        margin: 0;
     }
 }
 
-.buscador {
-    margin: 16px 0 24px;
-
-    input {
-        width: 100%;
-        max-width: 420px;
-    }
+.resena-datos {
+    margin-bottom: 6px;
+    color: variables.$color-texto-suave;
 }
 
-.mensaje-error {
-    margin: 6px 0 0;
-    font-size: 0.9rem;
-    color: variables.$color-acento-claro;
-}
-
-.resultado {
-    margin-top: 12px;
-    color: variables.$color-acento-claro;
-}
-
-// ----- Botón genérico (componente Button) -----
-.boton {
-    background-color: variables.$color-acento;
-    color: variables.$color-texto;
-    border: none;
-    border-radius: variables.$radio;
-    padding: 10px 24px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-
-    &:hover {
-        background-color: variables.$color-acento-claro;
-    }
+.sin-resenas {
+    color: variables.$color-texto-suave;
 }

@@ -1,12 +1,25 @@
-// ===== Archivo principal de estilos =====
-// Junta todos los archivos parciales. Se importa una sola vez, en main.jsx.
-// _mobile va al final para que sus reglas pisen a las anteriores en pantallas chicas.
+@use '@styles/variables';
+@use '@styles/mixins';
 
-@use '@styles/base';
-@use '@styles/layout';
-@use '@styles/formularios';
-@use '@styles/tarjetas';
-@use '@styles/ficha';
-@use '@styles/diario';
-@use '@styles/login';
-@use '@styles/mobile';
+// ===== Login =====
+
+.caja-login {
+    @include mixins.caja;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 24px;
+
+    h2 {
+        margin-top: 0;
+    }
+
+    input {
+        width: 100%;
+        background-color: variables.$color-fondo;
+    }
+
+    .boton {
+        width: 100%;
+        margin-bottom: 8px;
+    }
+}

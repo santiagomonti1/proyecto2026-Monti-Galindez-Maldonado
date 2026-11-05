@@ -1,82 +1,52 @@
 @use '@styles/variables';
 
-// ===== Layout: estructura común a todas las páginas =====
+// ===== Base =====
 
-// El footer queda siempre abajo, aunque la página tenga poco contenido.
-.pagina {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+* {
+    box-sizing: border-box;
 }
 
-main {
-    flex: 1;
-    padding: 24px 0;
-}
-
-// ----- Header y menú -----
-.encabezado {
-    border-bottom: 1px solid variables.$color-borde;
-    padding: 12px 0;
-
-    .contenedor {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-    }
-
-    nav {
-        margin-left: auto;
-    }
-}
-
-.logo {
-    width: 36px;
-}
-
-.menu-lista {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    list-style: none;
+body {
     margin: 0;
-    padding: 0;
-
-    a {
-        color: variables.$color-texto-suave;
-        text-decoration: none;
-        transition: color 0.3s ease;
-
-        // NavLink agrega la clase "active" al link de la página actual
-        &:hover,
-        &.active {
-            color: variables.$color-texto;
-        }
-    }
+    background-color: variables.$color-fondo;
+    color: variables.$color-texto;
+    font-family: variables.$fuente-base;
+    line-height: 1.5;
 }
 
-// "Cerrar sesión" es un botón, pero se ve como los links del menú
-.boton-menu {
-    padding: 0;
-    background: none;
-    border: none;
-    color: variables.$color-texto-suave;
-    font-family: inherit;
-    font-size: inherit;
-    cursor: pointer;
-    transition: color 0.3s ease;
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: variables.$color-acento-claro;
 
     &:hover {
         color: variables.$color-texto;
     }
 }
 
-// ----- Footer -----
-.pie {
-    border-top: 1px solid variables.$color-borde;
-    margin-top: 40px;
-    padding: 20px 0;
-    text-align: center;
-    font-size: 0.9rem;
+h1 {
+    margin: 0;
+    font-family: variables.$fuente-titulos;
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+    color: variables.$color-acento-claro;
+}
+
+h2 {
+    font-size: 1.4rem;
+    font-weight: normal;
+}
+
+.contenedor {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.subtitulo {
     color: variables.$color-texto-suave;
+    font-size: 2.5rem;
 }

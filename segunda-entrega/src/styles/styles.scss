@@ -1,57 +1,12 @@
-@use '@styles/variables';
-@use '@styles/mixins';
+// ===== Archivo principal de estilos =====
+// Junta todos los archivos parciales. Se importa una sola vez, en main.jsx.
+// _mobile va al final para que sus reglas pisen a las anteriores en pantallas chicas.
 
-// ===== Mi diario =====
-
-.perfil {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-}
-
-.avatar {
-    @include mixins.caja(50%);
-    width: 56px;
-    height: 56px;
-    text-align: center;
-    line-height: 54px;
-    font-size: 1.4rem;
-    font-weight: bold;
-}
-
-.perfil-info {
-    h2,
-    p {
-        margin: 0;
-    }
-
-    p {
-        color: variables.$color-texto-suave;
-    }
-}
-
-.tabla-historial {
-    width: 100%;
-    border-collapse: collapse;
-
-    caption {
-        text-align: left;
-        margin-bottom: 8px;
-        color: variables.$color-texto-suave;
-    }
-
-    th,
-    td {
-        padding: 10px 12px;
-        text-align: left;
-        border-bottom: 1px solid variables.$color-borde;
-    }
-
-    th {
-        color: variables.$color-texto-suave;
-    }
-
-    tbody tr:hover {
-        background-color: variables.$color-superficie;
-    }
-}
+@use '@styles/base';
+@use '@styles/layout';
+@use '@styles/formularios';
+@use '@styles/tarjetas';
+@use '@styles/ficha';
+@use '@styles/diario';
+@use '@styles/login';
+@use '@styles/mobile';
