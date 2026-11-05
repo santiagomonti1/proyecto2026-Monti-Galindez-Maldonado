@@ -57,7 +57,7 @@ const Login = () => {
 
     /**
      * Guarda lo que se escribe en el usuario y lo valida en el momento.
-     * @param {Event} e - Evento del input
+     * @param {Object} e - Evento del input
      */
     const cambiarUsuario = (e) => {
         setUsuario(e.target.value);
@@ -66,7 +66,7 @@ const Login = () => {
 
     /**
      * Guarda lo que se escribe en la contraseña y la valida en el momento.
-     * @param {Event} e - Evento del input
+     * @param {Object} e - Evento del input
      */
     const cambiarContrasena = (e) => {
         setContrasena(e.target.value);
