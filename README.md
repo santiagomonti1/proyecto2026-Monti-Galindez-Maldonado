@@ -99,7 +99,7 @@ La aplicación y el mock son dos programas distintos, así que se necesitan **do
    ```bash
    npm run mock
    ```
-   Levanta json-server en `http://localhost:3000` a partir del archivo `db.json`.
+    Levanta json-server en `http://localhost:3000` a partir del archivo `data/db.json`.
 2. **Terminal 2, la aplicación:**
    ```bash
    npm run dev
@@ -108,7 +108,7 @@ La aplicación y el mock son dos programas distintos, así que se necesitan **do
 
 Para detener cualquiera de los dos: **Ctrl + C** en su terminal.
 
-> Las reseñas que se guardan desde la aplicación quedan escritas en `db.json`. Para volver a los datos originales: `git restore db.json`.
+> Las reseñas que se guardan desde la aplicación quedan escritas en `data/db.json`. Para volver a los datos originales: `git restore data/db.json`.
 
 ### Scripts disponibles
 
@@ -148,7 +148,7 @@ Para detener cualquiera de los dos: **Ctrl + C** en su terminal.
 - [Vite](https://vite.dev/) 8: creación del proyecto, servidor de desarrollo y alias de imports
 - [React Router](https://reactrouter.com/) (`react-router-dom`) 7: rutas, rutas anidadas con `Outlet` y ruta dinámica `/pelicula/:id`
 - [Sass](https://sass-lang.com/) (SCSS): variables, anidación, archivos parciales con `@use` y mixins
-- [json-server](https://github.com/typicode/json-server): mock de la API REST a partir de `db.json`
+- [json-server](https://github.com/typicode/json-server): mock de la API REST a partir de `data/db.json`
 - `fetch` con `async`/`await` para consumir el mock
 - `localStorage` para guardar la sesión del usuario
 - [ESLint](https://eslint.org/): análisis del código
@@ -169,7 +169,8 @@ primera-entrega/
 └── Mockup/        → mockups desktop y mobile, y flujo de navegación (PDF)
 
 segunda-entrega/
-├── db.json        → datos del mock: películas, reseñas y usuarios
+├── data/
+│   └── db.json    → datos del mock: películas, reseñas y usuarios
 ├── public/        → favicon y pósters (se usan con ruta absoluta)
 ├── src/
 │   ├── api/         → funciones fetch para comunicarse con el mock
