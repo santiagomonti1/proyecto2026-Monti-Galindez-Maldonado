@@ -174,7 +174,8 @@ segunda-entrega/
 ├── src/
 │   ├── api/         → funciones fetch para comunicarse con el mock
 │   ├── assets/      → logo (se importa desde el Header)
-│   ├── components/  → Header, Footer, Layout, Button, Input, TarjetaPelicula, Fecha
+│   ├── components/  → Header, Footer, Button, Input, TarjetaPelicula, Fecha
+│   ├── layout/      → Layout: plantilla común con Header, Footer y Outlet
 │   ├── pages/       → Inicio, Catalogo, Ficha, Diario, Login
 │   ├── styles/      → archivos .scss (styles.scss y sus parciales)
 │   ├── App.jsx      → rutas de la aplicación
