@@ -88,8 +88,15 @@ Filmoteca permite al usuario:
 ```bash
 git clone https://github.com/santiagomonti1/proyecto2026-Monti-Galindez-Maldonado.git
 cd proyecto2026-Monti-Galindez-Maldonado/segunda-entrega
-npm install
+npm ci
 ```
+
+Para instalar las dependencias hay dos comandos, según para qué se vaya a usar el proyecto:
+
+| Comando       | Cuándo usarlo                                                       | Qué hace                                                                                                   |
+| ------------- | ------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `npm ci`      | Para **ejecutar** el proyecto y verlo funcionar                      | Instala exactamente las versiones de `package-lock.json`, sin modificarlo. Si existe `node_modules`, lo borra antes de instalar |
+| `npm install` | Para **desarrollar**: agregar, quitar o actualizar dependencias      | Instala según `package.json` y puede actualizar `package-lock.json`                                        |
 
 ### Ejecución
 
@@ -99,7 +106,7 @@ La aplicación y el mock son dos programas distintos, así que se necesitan **do
    ```bash
    npm run mock
    ```
-   Levanta json-server en `http://localhost:3000` a partir del archivo `db.json`.
+    Levanta json-server en `http://localhost:3000` a partir del archivo `data/db.json`.
 2. **Terminal 2, la aplicación:**
    ```bash
    npm run dev
@@ -108,7 +115,7 @@ La aplicación y el mock son dos programas distintos, así que se necesitan **do
 
 Para detener cualquiera de los dos: **Ctrl + C** en su terminal.
 
-> Las reseñas que se guardan desde la aplicación quedan escritas en `db.json`. Para volver a los datos originales: `git restore db.json`.
+> Las reseñas que se guardan desde la aplicación quedan escritas en `data/db.json`. Para volver a los datos originales: `git restore data/db.json`.
 
 ### Scripts disponibles
 
@@ -148,7 +155,7 @@ Para detener cualquiera de los dos: **Ctrl + C** en su terminal.
 - [Vite](https://vite.dev/) 8: creación del proyecto, servidor de desarrollo y alias de imports
 - [React Router](https://reactrouter.com/) (`react-router-dom`) 7: rutas, rutas anidadas con `Outlet` y ruta dinámica `/pelicula/:id`
 - [Sass](https://sass-lang.com/) (SCSS): variables, anidación, archivos parciales con `@use` y mixins
-- [json-server](https://github.com/typicode/json-server): mock de la API REST a partir de `db.json`
+- [json-server](https://github.com/typicode/json-server): mock de la API REST a partir de `data/db.json`
 - `fetch` con `async`/`await` para consumir el mock
 - `localStorage` para guardar la sesión del usuario
 - [ESLint](https://eslint.org/): análisis del código
@@ -169,12 +176,14 @@ primera-entrega/
 └── Mockup/        → mockups desktop y mobile, y flujo de navegación (PDF)
 
 segunda-entrega/
-├── db.json        → datos del mock: películas, reseñas y usuarios
+├── data/
+│   └── db.json    → datos del mock: películas, reseñas y usuarios
 ├── public/        → favicon y pósters (se usan con ruta absoluta)
 ├── src/
 │   ├── api/         → funciones fetch para comunicarse con el mock
 │   ├── assets/      → logo (se importa desde el Header)
-│   ├── components/  → Header, Footer, Layout, Button, Input, TarjetaPelicula, Fecha
+│   ├── components/  → Header, Footer, Button, Input, TarjetaPelicula, Fecha
+│   ├── layout/      → Layout: plantilla común con Header, Footer y Outlet
 │   ├── pages/       → Inicio, Catalogo, Ficha, Diario, Login
 │   ├── styles/      → archivos .scss (styles.scss y sus parciales)
 │   ├── App.jsx      → rutas de la aplicación
