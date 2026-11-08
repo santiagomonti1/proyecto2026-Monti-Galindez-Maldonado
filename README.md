@@ -88,8 +88,15 @@ Filmoteca permite al usuario:
 ```bash
 git clone https://github.com/santiagomonti1/proyecto2026-Monti-Galindez-Maldonado.git
 cd proyecto2026-Monti-Galindez-Maldonado/segunda-entrega
-npm install
+npm ci
 ```
+
+Para instalar las dependencias hay dos comandos, según para qué se vaya a usar el proyecto:
+
+| Comando       | Cuándo usarlo                                                       | Qué hace                                                                                                   |
+| ------------- | ------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `npm ci`      | Para **ejecutar** el proyecto y verlo funcionar                      | Instala exactamente las versiones de `package-lock.json`, sin modificarlo. Si existe `node_modules`, lo borra antes de instalar |
+| `npm install` | Para **desarrollar**: agregar, quitar o actualizar dependencias      | Instala según `package.json` y puede actualizar `package-lock.json`                                        |
 
 ### Ejecución
 
